@@ -1,0 +1,19 @@
+{
+  "name": "baikal-project",
+  "version": "1.0.0",
+  "description": "for bikal foundation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/11evils/baikal.git"
+  },
+  "author": "konstantin 11evils pialov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/11evils/baikal/issues"
+  },
+  "homepage": "https://github.com/11evils/baikal#readme"
+}
