@@ -1,0 +1,53 @@
+*
+    box-sizing: border-box
+
+.main
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    display: flex
+    justify-content: center
+    height: 100vh
+    padding: 40px 80px 0 80px
+    width: 100%
+
+.wrap-content
+    width: 1168px
+
+.wrap-logo-menu
+    align-items: center
+    display: flex
+    justify-content: space-between
+    width: 100%
+
+.bst-logo
+    font-size: 16px
+    height: 2.5625em
+    width: 5.8125em
+    
+.bst-menu
+    align-items: center
+    display: flex
+    font-size: 16px
+    height: 2.5625em
+    width: 27.1875em
+    &__desktop
+        display: flex
+        justify-content: space-between
+        width: 100%
+        a   
+            color: white
+            font-family: 'Montserrat-Bold'
+            font-size: 0.75em
+            font-style: normal
+            text-decoration: none
+            text-transform: uppercase
+
+@media (max-width: 767px)
+    .wrap-content
+        width: 100%
+    .bst-menu
+        &__desktop
+            display: none
+
+    
