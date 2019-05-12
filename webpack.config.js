@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -17,16 +18,16 @@ module.exports = {
 
     module: {
         rules: [
-            // {
-            //     test: /\.m?js$/,
-            //     exclude: /(node_modules|bower_components)/,
-            //     use: {
-            //         loader: 'babel-loader',
-            //         options: {
-            //         presets: ['@babel/preset-env']
-            //         }
-            //     }
-            // },
+            {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                    presets: ['@babel/preset-env']
+                    }
+                }
+            },
             {
                 test: /\.(sa|sc|c)ss$/,
                 exclude: /(node_modules|bower_components)/,
@@ -47,17 +48,13 @@ module.exports = {
                     }
                 ]
             },
-            // {
-            //     test: /\.(jpe?g|png|gif)$/,
-            //     loader: 'url-loader',
-            //     options: {
-            //         limit: 10 * 1024,
-            //         fallback: {
-            //             loader: 'file-loader',
-            //             options: { name: './img/[name].[ext]' }
-            //         }
-            //     }
-            // },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]'
+                }
+            },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
                 use: [
@@ -75,7 +72,15 @@ module.exports = {
             filename: './style.bundle.css'
             // filename: './style.bundle.css'
         }),
-        new HtmlWebpackPlugin({ template: './src/index.html' }),
-        new CleanWebpackPlugin()
+        new HtmlWebpackPlugin({
+            hash: false,
+            template: './src/index.html',
+            filename: './index.html'
+        }),
+        new CleanWebpackPlugin(),
+        new CopyWebpackPlugin([
+            { from: './src/img', to: './img' },
+            { from: './src/favicon', to: './favicon' },
+        ])
     ]
 }
