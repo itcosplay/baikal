@@ -9,6 +9,10 @@
     "watch": "webpack --mode development --watch",
     "start": "webpack-dev-server --mode development --open"
   },
+  "browserslist": [
+    "> 1%",
+    "last 3 version"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/11evils/baikal.git"

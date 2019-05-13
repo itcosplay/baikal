@@ -1,10 +1,10 @@
 import './sass/reset.sass';
 import './sass/fonts.sass';
 // import './scss/slick.scss'
+import './css/humburger.css';
 import './sass/main-section.sass';
-// import './css/humburger.css';
-// import 'slick-carousel';
 
+// import 'slick-carousel';
 
 
 window.onload = () => {
@@ -23,3 +23,13 @@ window.onload = () => {
         } 
     } 
 };
+
+function main() {
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenu.onclick = () => {
+        console.log('click mob menu');
+    }
+}
+
+main();
