@@ -1,7 +1,9 @@
 import './sass/reset.sass';
 import './sass/fonts.sass';
+// import './sass/variable.sass';
 // import './scss/slick.scss'
 import './css/humburger.css';
+import './sass/modals.sass';
 import './sass/main-section.sass';
 
 // import 'slick-carousel';

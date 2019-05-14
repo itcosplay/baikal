@@ -1,5 +1,8 @@
+@import variable
+    
 *
     box-sizing: border-box
+    filter: blur(20px)
 
 .main
     background-position: center
@@ -66,10 +69,47 @@
 
 .main-content
     text-align: center
+    font-size: 1rem
+    &__header
+        color: white
+        font-family: 'Montserrat-Bold'
+        font-size: 3em
+        margin-bottom: 0.5em
+        text-transform: uppercase
+    &__text
+        color: white
+        font-family: 'Montserrat-SemiBold'
+        font-size: 1.5em
+        font-style: normal
+        font-weight: 600
+        margin-bottom: 1em
+        line-height: 1.48
+    &__button
+        background-color: $button-color
+        border: none
+        color: white
+        font-family: 'Montserrat-Bold'
+        font-size: 1.125em
+        height: 3.75em
+        outline: none
+        width: 16.5625em
+        &:hover
+            background-color: $hover-btn
+        &:active
+            background-color: $button-color
+
 
 .hide-item
     display: none
-    
+
+@media (max-width: 1199px)
+    .main-content
+        font-size: 0.8rem
+
+@media (max-width: 991px)
+    .main-content
+        font-size: 0.7rem
+
 @media (max-width: 767px)
     .wrap-content
         width: 100%
@@ -80,5 +120,11 @@
             display: none
         &__humburger
             display: flex
+    .main-content
+        font-size: 0.6rem
+
+@media (max-width: 575px)
+    .main-content
+        font-size: 0.54rem
 
     
