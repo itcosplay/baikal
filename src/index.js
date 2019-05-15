@@ -5,6 +5,7 @@ import './sass/fonts.sass';
 import './css/humburger.css';
 import './sass/modals.sass';
 import './sass/main-section.sass';
+import './sass/specificity.sass'
 
 // import 'slick-carousel';
 
@@ -58,6 +59,32 @@ function main() {
         wrapLogoMenuHeight = Number(wrapLogoMenuHeight.substring(0, wrapLogoMenuHeight.length - 2));
         
         mainContentWrap.style.height = `${clientHeight - wrapLogoMenuHeight - 40}px`;
+    }
+
+    const mainContentBtn = document.querySelector('.main-content__button');
+    const modalCloseBtn = document.querySelector('.modal-form__close-btn');
+
+    const sections = document.querySelectorAll('section');
+    const overlay = document.querySelector('.overlay');
+    const modalForm = document.querySelector('.modal-form');
+
+    mainContentBtn.onclick = () => {
+        
+        for (const section of sections) {
+            section.classList.add('have-blur');
+        }
+
+        overlay.classList.add('show-block');
+        modalForm.classList.add('show-block');
+    }
+
+    modalCloseBtn.onclick = () => {
+        for (const section of sections) {
+            section.classList.remove('have-blur');
+        }
+
+        overlay.classList.remove('show-block');
+        modalForm.classList.remove('show-block');
     }
 
 }
