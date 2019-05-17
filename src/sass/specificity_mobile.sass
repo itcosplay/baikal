@@ -1,0 +1,49 @@
+@import _variable
+
+.specificity__wrap-content_mobile
+    flex-wrap: wrap
+    font-size: 1rem
+    justify-content: center
+    padding: 2rem 1rem 2rem 1rem
+    width: 100%
+
+.sp-mobile-item
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    padding-bottom: 2em
+    width: 100%
+    &__header
+        color: $specify-header-text-color
+        font: 800 1.1em Montserrat-ExtraBold
+        margin-bottom: 1em
+        text-align: center
+        text-transform: uppercase
+        width: $width-img-specify-mobile
+    &__img
+        height: $width-img-specify-mobile / 1.75
+        margin-bottom: 1em
+        width: $width-img-specify-mobile
+    &__text
+        color: $specify-text-color
+        font: 500 1em Montserrat-Medium
+        line-height: 1.5
+        width: $width-img-specify-mobile
+
+@media (max-width: 767px)
+    .specificity__wrap-content_mobile
+        font-size: .8rem
+    
+@media (max-width: 575px)
+    .specificity
+        padding: 0
+    .specificity__wrap-content_mobile
+        font-size: .6rem
+        padding: 2em 0 2em 0
+    .sp-mobile-item
+        &__header
+            padding: 0 .5em
+        &__img
+            padding: 0 .5em
+        &__text
+            padding: 0 .5em

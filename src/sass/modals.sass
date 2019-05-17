@@ -13,7 +13,6 @@
 
 .modal-form
     background-color: $modal-color-bg
-    display: none
     font: 1rem Montserrat-Bold
     height: 38.625em
     left: 50%
@@ -22,7 +21,8 @@
     position: fixed
     top: 50%
     transform: translate(-50%, -50%)
-    transition: 1s
+    transition: .5s
+    visibility: hidden
     width: 38.375em
     z-index: $modal-index
     &__header
@@ -64,8 +64,8 @@
     filter: blur(2px)
 
 .show-block
-    display: block
     opacity: 1
+    visibility: visible
 
 @media (max-width: 991px)
     .modal-form

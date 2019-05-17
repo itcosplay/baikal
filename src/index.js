@@ -6,6 +6,8 @@ import './css/humburger.css';
 import './sass/modals.sass';
 import './sass/main-section.sass';
 import './sass/specificity.sass'
+import './sass/specificity_mobile.sass'
+import './sass/travel-format.sass'
 
 // import 'slick-carousel';
 
