@@ -1,5 +1,0 @@
-[ 1200+
-[ 992 - 1199 ) max-width 1199px
-[ 768 - 991  ) max-width 991px
-[ 576 - 767  ) max-width 767px
-[ 320 - 575  ) max-width 575px

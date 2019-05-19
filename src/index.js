@@ -8,6 +8,9 @@ import './sass/main-section.sass';
 import './sass/specificity.sass'
 import './sass/specificity_mobile.sass'
 import './sass/travel-format.sass'
+import './sass/with-us.sass'
+import './sass/about-us.sass'
+import './sass/footer.sass'
 
 // import 'slick-carousel';
 

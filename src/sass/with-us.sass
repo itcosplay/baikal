@@ -1,0 +1,51 @@
+@import _variable
+
+.with-us
+    align-items: center
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    display: flex
+    height: 29em
+    justify-content: center
+    width: 100%
+
+.with-us-content
+    align-items: center
+    color: white
+    display: flex
+    flex-direction: column
+    justify-content: center
+    &__header
+        font: 800 3em Montserrat-ExtraBold
+        text-align: center
+        text-transform: uppercase
+    &__text
+        font: 800 1.5em Montserrat-SemiBold
+        margin-top: 1.4em
+        text-align: center
+
+@media (max-width: 1279px) // to 1024
+    .with-us
+        font-size: .8rem // <------------ font-size for media
+    
+@media (max-width: 1023px) // to 768
+    .with-us
+        font-size: .6rem // <------------ font-size for media
+    
+@media (max-width: 767px) // to 414
+    .with-us
+        font-size: .5rem // <------------ font-size for media
+
+@media (max-width: 413px) // to 375
+    .with-us
+        font-size: .45rem // <------------ font-size for media
+
+@media (max-width: 374px) // to 360
+    .with-us
+        font-size: .4rem // <------------ font-size for media
+
+@media (max-width: 359px) // to 320
+    .with-us
+        font-size: .35rem // <------------ font-size for media
+    
