@@ -56,9 +56,12 @@
     .travel-format
         &__wrap-content
             font-size: .8rem // <------------ font-size for media
+        &__wrap-format-items
+            margin: 4.5em 0 5.5em 0
 
 @media (max-width: 1023px) // to 768
     .travel-format
+        margin-top: 2em
         &__wrap-content
             font-size: .6rem // <------------ font-size for media
     .format-item
@@ -74,10 +77,18 @@
             align-items: center
             flex-direction: column
             justify-content: center
-            margin: 2em 0 10.75em 0
+            margin: 2em 0 1.5em 0
     .format-item
+        height: 25em
         margin-bottom: 1.5em
+        &__header
+            margin-top: 1em
+            padding: 0 1em 0 1em
+        &__text
+            margin-top: 0.75em
+            padding: 0 1em 0 1em
         &__link
+            margin: 2em 0 0 1em
             width: 10em
 
 @media (max-width: 413px) // to 375
@@ -85,6 +96,9 @@
         margin-top: 2rem
         &__wrap-content
             font-size: .9rem // <------------ font-size for media
+        .format-item
+            &__link
+                width: 11em
     
 @media (max-width: 374px) // to 360
     .travel-format

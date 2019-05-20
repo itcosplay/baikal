@@ -11,7 +11,7 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: './bundle.js'
+        filename: './[name].js'
     },
 
     devtool: 'source-map',
@@ -80,6 +80,11 @@ module.exports = {
             hash: false,
             template: './src/index.html',
             filename: './index.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: false,
+            template: './src/ekspedecii.html',
+            filename: './ekspedecii.html'
         }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin([

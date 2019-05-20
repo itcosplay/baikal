@@ -18,6 +18,8 @@ import './sass/footer.sass'
 window.onload = () => {
     //setting property 'height' of .wrap-main-content
     const mainContentWrap = document.querySelector('.wrap-main-content');
+    if (mainContentWrap === null) return
+    
     let clientHeight = document.documentElement.clientHeight;
     let wrapLogoMenu = document.querySelector('.wrap-logo-menu');
     let wrapLogoMenuHeight = window.getComputedStyle(wrapLogoMenu).height;
@@ -91,6 +93,8 @@ function main() {
         overlay.classList.remove('show-block');
         modalForm.classList.remove('show-block');
     }
+
+    alert(file.name);
 
 }
 
