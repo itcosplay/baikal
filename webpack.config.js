@@ -86,6 +86,26 @@ module.exports = {
             template: './src/ekspedecii.html',
             filename: './ekspedecii.html'
         }),
+        new HtmlWebpackPlugin({
+            hash: false,
+            template: './src/eko-tours.html',
+            filename: './eko-tours.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: false,
+            template: './src/location.html',
+            filename: './location.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: false,
+            template: './src/events.html',
+            filename: './events.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: false,
+            template: './src/contacts.html',
+            filename: './contacts.html'
+        }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
             { from: './src/img', to: './img' },

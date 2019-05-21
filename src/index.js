@@ -13,6 +13,7 @@ import './sass/about-us.sass';
 import './sass/footer.sass';
 import './sass/pages-menu.sass';
 import './sass/tours.sass';
+import './sass/dev.sass';
 
 // import 'slick-carousel';
 
