@@ -1,0 +1,70 @@
+@import _variable
+
+.tours
+    align-items: center
+    display: flex
+    flex-direction: column
+    margin: 5.625em 0 0 0
+    &__header
+        font: bold 1.5em 'Montserrat-Bold'
+        text-align: center
+        text-transform: uppercase
+        width: 100%
+    &__wrap-content
+        align-items: center
+        display: flex
+        flex-wrap: wrap
+        padding: 0 2em 0 0
+        width: 73em
+
+.tours-card
+    box-shadow: 0 .25em 1.875em rgba(0, 0, 0, .08)
+    height: 31.1875em
+    margin: 2em 0 0 1.5em
+    width: $width-format-item-block
+    &:nth-child(odd)
+        margin: 1em 0 0 0
+    &__img
+        height: $width-format-item-block / 1.6694
+        width: $width-format-item-block
+    &__header
+        color: $specify-header-text-color
+        font: bold 1em 'Montserrat-Bold'
+        margin-top: 1.25em
+        padding: 0 1em 0 2.25em
+        text-align: left
+        text-transform: uppercase
+        width: 100%
+    &__text
+        color: $specify-text-color
+        font: 500 0.875em Montserrat-Medium
+        line-height: 1.64
+        margin-top: 1.1429em
+        padding: 0 1.1429em 0 2.5114em
+        width: 100%
+    &__wrap-dates
+        align-items: center
+        display: flex
+        margin: 1em 0 0 2.25em
+        text-decoration: none
+        width: 10em
+        p
+            color: $format-item-block-link-color
+            font: 500 1em Montserrat-Medium
+            margin-left: .5em
+    &__btn
+        align-items: center
+        background-color: $button-color
+        color: white
+        display: flex
+        font: bold 1.125em 'Montserrat-Bold' // font-size: 18px
+        height: 3.5em
+        justify-content: center
+        margin: 2.5em 0 0 2em
+        text-decoration: none
+        width: 15em
+        &:hover
+            background-color: $hover-btn
+        &:active
+            background-color: $button-color
+        

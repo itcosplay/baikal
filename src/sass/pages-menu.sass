@@ -1,2 +1,61 @@
 @import _variable
 
+.pages-menu
+    box-shadow: 0 0.25em 1.875em rgba(0, 0, 0, 0.04)
+    display: flex
+    font-size: 1rem // <--- the main font-size ---
+    height: 7.5em
+    justify-content: center
+    padding: 0 1.875em 0 1.875em
+    width: 100%
+    &__wrap-content
+        align-items: center
+        display: flex
+        height: 7.5em
+        justify-content: space-between
+        width: 73em
+    &__logo
+        height: 2.5625em
+        width: 5.8125em
+    &__desktop-menu
+        display: flex
+        justify-content: space-between
+        width: 30em
+        a   
+            color: $specify-header-text-color
+            font-family: 'Montserrat-Bold'
+            font-size: 0.75em
+            font-style: normal
+            text-decoration: none
+            text-transform: uppercase
+    &__humburger
+        align-items: center
+        display: none
+        justify-content: center
+        .line
+            stroke: $specify-header-text-color
+    &__mobile-menu
+        text-align: center
+        line-height: 2
+        a   
+            color: $specify-header-text-color
+            font-family: 'Montserrat-Bold'
+            font-size: 1.5em
+            font-style: normal
+            text-decoration: none
+            text-transform: uppercase
+
+@media (max-width: 1279px) // to 1024
+    .pages-menu
+        font-size: .8rem // <------------ font-size -----
+
+@media (max-width: 1023px) // to 768
+    .pages-menu
+        font-size: .6rem // <------------ font-size -----
+
+@media (max-width: 767px) // to 414
+    .pages-menu
+        &__desktop-menu
+            display: none
+        &__humburger
+            display: flex
