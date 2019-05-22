@@ -14,16 +14,15 @@
         align-items: center
         display: flex
         flex-wrap: wrap
-        padding: 0 2em 0 0
+        padding: 0 2em 5em 0
         width: 73em
 
 .tours-card
     box-shadow: 0 .25em 1.875em rgba(0, 0, 0, .08)
     height: 31.1875em
     margin: 2em 0 0 1.5em
+    position: relative
     width: $width-format-item-block
-    &:nth-child(odd)
-        margin: 1em 0 0 0
     &__img
         height: $width-format-item-block / 1.6694
         width: $width-format-item-block
@@ -43,11 +42,13 @@
         padding: 0 1.1429em 0 2.5114em
         width: 100%
     &__wrap-dates
-        align-items: center
         display: flex
-        margin: 1em 0 0 2.25em
+        margin: 1em 0 0 0
+        padding: 0 1em 0 2.25em
         text-decoration: none
-        width: 10em
+        width: 100%
+        svg
+            margin-top: 0.42em
         p
             color: $format-item-block-link-color
             font: 500 1em Montserrat-Medium
@@ -55,16 +56,23 @@
     &__btn
         align-items: center
         background-color: $button-color
+        bottom: 1em
         color: white
         display: flex
         font: bold 1.125em 'Montserrat-Bold' // font-size: 18px
         height: 3.5em
         justify-content: center
-        margin: 2.5em 0 0 2em
+        left: 2em
+        position: absolute
         text-decoration: none
         width: 15em
         &:hover
             background-color: $hover-btn
         &:active
             background-color: $button-color
-        
+
+@media (max-width: 1279px) // to 1024
+        .tours
+            height: 100vh
+            &__wrap-content
+                font-size: 0.8rem

@@ -14,55 +14,65 @@ import './sass/footer.sass';
 import './sass/pages-menu.sass';
 import './sass/tours.sass';
 import './sass/dev.sass';
-
 // import 'slick-carousel';
 
 
 window.onload = () => {
-    // setting property 'height' of .wrap-main-content
-    const mainContentWrap = document.querySelector('.wrap-main-content');
+    heightSectionToEndScreen(document.querySelector('.wrap-main-content'), document.querySelector('.wrap-logo-menu'));
+    heightSectionToEndScreen(document.querySelector('.tours'), document.querySelector('.pages-menu'));
+    setImg();
+    setBg();
+    openMobileMenuOnMainPage();
+};
 
-    if (mainContentWrap !== null) {
+function heightSectionToEndScreen(section, menu) {
+    if (section !== null && menu !== null) {
         let clientHeight = document.documentElement.clientHeight;
-        let wrapLogoMenu = document.querySelector('.wrap-logo-menu');
-        let wrapLogoMenuHeight = window.getComputedStyle(wrapLogoMenu).height;
+        let menuHeight = window.getComputedStyle(menu).height;
 
-        wrapLogoMenuHeight = Number(wrapLogoMenuHeight.substring(0, wrapLogoMenuHeight.length - 2));
-        mainContentWrap.style.height = `${clientHeight - wrapLogoMenuHeight - 40}px`;
+        menuHeight = Number(menuHeight.substring(0, menuHeight.length - 2));
+        section.style.height = `${clientHeight - menuHeight - 40}px`;
     }
-    ////
+}
 
-    //load images and background images after DOM
+function setImg() {
     var imgDefer = document.getElementsByTagName('img');
-    var bgDefer = document.getElementsByClassName('set-background');
 
     for (var i = 0; i < imgDefer.length; i++) {
         if(imgDefer[i].getAttribute('data-src')) {
             imgDefer[i].setAttribute('src', imgDefer[i].getAttribute('data-src'));
         } 
     }
+}
+
+function setBg() {
+    var bgDefer = document.getElementsByClassName('set-background');
 
     for (var i = 0; i<bgDefer.length; i++) {
         if(bgDefer[i].getAttribute('data-bg')) {
             bgDefer[i].setAttribute('style', bgDefer[i].getAttribute('data-bg'));
         } 
     }
-    ////
-};
+}
 
-function main() {
-    const mobileMenu = document.getElementById('mobile-menu');
+function openMobileMenuOnMainPage() {
+    let humburger = document.querySelector('.bst-menu__humburger');
+    let mobMenu = document.querySelector('.bst-menu__mobile');
+    let mainContent = document.querySelector('.main-content');
 
-    if (mobileMenu !== null) {
-        mobileMenu.onclick = () => {
-            const mobMenu = document.querySelector('.bst-menu__mobile');
-            const mainContent = document.querySelector('.main-content');
-        
-            mobMenu.classList.toggle('hide-item');
+    if (humburger !== null && mobMenu !== null && mainContent !== null) {
+        humburger.onclick = () => {
+            mobMenu.classList.toggle('show-mobile-menu');
             mainContent.classList.toggle('hide-item');
         }
     }
+}
 
+
+
+
+function main() {
+    
     const pagesHumburger = document.getElementById('pages-humburger');
 
     if (pagesHumburger !== null) {
