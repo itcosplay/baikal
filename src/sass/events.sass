@@ -1,0 +1,78 @@
+@import _variable
+    
+.bst-section
+    display: flex
+    justify-content: center
+    width: 100%
+    &__container
+        padding: 0 3rem 0
+        width: 79rem // 73rem(1168px) + padding: 0 3rem 0
+
+.white-header
+    box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.04)
+    &__wrp-logo-menu
+        align-items: center
+        display: flex
+        font-size: 1rem
+        height: 7.5em
+        justify-content: space-between
+        width: 100%
+    &__logo
+        font-size: 1rem
+        height: 2.5625em
+        width: 5.8125em
+    &__desktop-menu
+        display: flex
+        font-size: 1rem
+        justify-content: space-between
+        width: 30em
+        a   
+            color: $specify-header-text-color
+            font-family: 'Montserrat-Bold'
+            font-size: 0.75em
+            font-style: normal
+            text-decoration: none
+            text-transform: uppercase
+    &__humburger
+        display: none
+
+@media (max-width: 1279px) // to 1024
+    .bst-section
+        &__container
+            padding: 0 3rem 0
+            width: 100%
+
+@media (max-width: 1023px) // to 768
+    .bst-section
+        &__container
+            padding: 0 2.5rem 0
+    .white-header
+        &__desktop-menu
+            display: none
+        &__humburger
+            display: none
+
+@media (max-width: 767px) // to 575px
+    .bst-section
+        &__container
+            padding: 0 2rem 0
+
+@media (max-width: 574px) // to 414px
+    .bst-section
+        &__container
+            padding: 0 1.5rem 0
+
+@media (max-width: 413px) // to 375
+    .bst-section
+        &__container
+            padding: 0 1rem 0
+
+@media (max-width: 374px) // to 360
+    .bst-section
+        &__container
+            padding: 0 .5rem 0
+
+@media (max-width: 359px) // to 320
+    .bst-section
+        &__container
+            padding: 0 .3rem 0

@@ -13,16 +13,17 @@ import './sass/about-us.sass';
 import './sass/footer.sass';
 import './sass/pages-menu.sass';
 import './sass/tours.sass';
+import './sass/events.sass';
 import './sass/dev.sass';
 // import 'slick-carousel';
 
 
 window.onload = () => {
     heightSectionToEndScreen(document.querySelector('.wrap-main-content'), document.querySelector('.wrap-logo-menu'));
-    heightSectionToEndScreen(document.querySelector('.tours'), document.querySelector('.pages-menu'));
     setImg();
     setBg();
     openMobileMenuOnMainPage();
+    openMobileMenuOtherPages();
 };
 
 function heightSectionToEndScreen(section, menu) {
@@ -68,24 +69,25 @@ function openMobileMenuOnMainPage() {
     }
 }
 
+function openMobileMenuOtherPages() {
+    const pagesHumburger = document.getElementById('pages-humburger');
+    const mobMenu = document.querySelector('.pages-menu__wrap-mobile-menu');
 
+    if (pagesHumburger !== null && mobMenu !== null) {
+        pagesHumburger.onclick = () => {
+            mobMenu.classList.toggle('show-mobile-pages-menu');
+            // mainContent.classList.toggle('hide-item');
+        }
+    }
+}
 
 
 function main() {
     
-    const pagesHumburger = document.getElementById('pages-humburger');
-
-    if (pagesHumburger !== null) {
-        pagesHumburger.onclick = () => {
-            const mobMenu = document.querySelector('.pages-menu__mobile-menu');
-            // const mainContent = document.querySelector('.main-content');
-        
-            mobMenu.classList.toggle('hide-item');
-            // mainContent.classList.toggle('hide-item');
-        }
-    }
+    
 
     window.onresize = () => {
+    
         const mainContentWrap = document.querySelector('.wrap-main-content');
 
         if (mainContentWrap !== null) {
