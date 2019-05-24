@@ -1,26 +1,33 @@
 @import _variable
 
-.pages-menu
-    box-shadow: 0 0.25em 1.875em rgba(0, 0, 0, 0.04)
-    display: flex
-    font-size: 1rem // <--- the main font-size ---
-    height: 7.5em
-    justify-content: center
-    // padding: 0 1.875em 0 1.875em
-    width: 100%
-    &__wrap-content
+.white-header
+    box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.04)
+    &__container
+        display: flex
+        justify-content: center
+        flex-direction: column
+    &__wrp-logo-menu
         align-items: center
         display: flex
+        font-size: 1rem
         height: 7.5em
         justify-content: space-between
-        width: 73em
+        overflow: hidden
+        width: 100%
     &__logo
+        font-size: 1rem
         height: 2.5625em
         width: 5.8125em
     &__desktop-menu
         display: flex
+        font-size: 1rem
         justify-content: space-between
         width: 30em
+        li
+            align-items: center
+            display: flex
+            height: 7.5em
+            position: relative 
         a   
             color: $specify-header-text-color
             font-family: 'Montserrat-Bold'
@@ -29,23 +36,23 @@
             text-decoration: none
             text-transform: uppercase
     &__humburger
-        display: none
-        overflow: hidden
-        // padding: 0 15em 0 0
+        display: none 
+        margin-right: -1em
         .line
             stroke: $specify-header-text-color
-    &__wrap-mobile-menu
+    &__wrp-mobile-menu
         align-items: center
         display: flex
         height: 0
+        justify-content: right
         overflow: hidden
-        padding: 0 1.5em 0 1.5em
         transition: .5s
         width: 100%
     &__mobile-menu
         line-height: 2
-        text-align: right
         width: 100%
+        li  
+            text-align: right
         a   
             color: $specify-header-text-color
             font-family: 'Montserrat-Bold'
@@ -54,26 +61,25 @@
             text-decoration: none
             text-transform: uppercase
 
-.show-mobile-pages-menu
-    height: 100vh
-
-
-@media (max-width: 1279px) // to 1024
-    .pages-menu
-        font-size: .8rem // <------------ font-size -----
+.li-underline
+    &:after
+        border: 2px solid $format-item-block-link-color
+        bottom: -0.125em
+        content: ''
+        left: 50%
+        position: absolute
+        transform: translateX(-50%)
+        width: 2.6em
 
 @media (max-width: 1023px) // to 768
-    .pages-menu
-        font-size: .6rem // <------------ font-size -----
-
-@media (max-width: 767px) // to 414
-    .pages-menu
-        &__wrap-content
-            padding: 0 0 0 1.875em
-            width: 100%
+    .white-header
+        &__wrp-logo-menu
+            height: 5em
         &__desktop-menu
             display: none
         &__humburger
             align-items: center
             display: flex
             justify-content: center
+
+

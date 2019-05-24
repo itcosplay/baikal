@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>BST-Экспедиции</title>
+		<title>BST &ndash; мероприятия со смыслом</title>
 		<meta name="template" content="baikal lake tourism">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -14,8 +14,10 @@
 
 	<body>
 
+        
+
         <section class="bst-section white-header">
-            <div class="bst-section__container">
+            <div class="bst-section__container white-header__container">
                 <div class="white-header__wrp-logo-menu">
                     <a href="./index.html">
                         <img class="white-header__logo" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="logo" data-src="./img/page-logo.png">
@@ -23,7 +25,7 @@
                     <ul class="white-header__desktop-menu">
                         <li><a href="ekspedecii.html">экпедиции</a></li>
                         <li><a href="eko-tours.html">экотуры</a></li>
-                        <li><a href="events.html">мероприятия</a></li>
+                        <li class="li-underline"><a href="events.html">мероприятия</a></li>
                         <li><a href="location.html">размещение</a></li>
                         <li><a href="contacts.html">контакты</a></li>
                     </ul>
@@ -41,58 +43,54 @@
                         </svg> 
                     </div>
                 </div>
+                <div class="white-header__wrp-mobile-menu">
+                    <ul class="white-header__mobile-menu">
+                        <li><a href="ekspedecii.html">экпедиции</a></li>
+                        <li><a href="eko-tours.html">экотуры</a></li>
+                        <li><a href="events.html">мероприятия</a></li>
+                        <li><a href="location.html">размещение</a></li>
+                        <li><a href="contacts.html">контакты</a></li>
+                    </ul>
+                </div>    
             </div>
         </section>
 
-
-        <!-- <div class="overlay"></div> -->
-
-        <!-- <div class="modal-form">
-            <h2 class="modal-form__header">заполните вашу заявку</h2>
-            <svg class="modal-form__close-btn" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="15.3536" y1="0.353553" x2="1.35355" y2="14.3536" stroke="#248CEC"/>
-                <line y1="-0.5" x2="19.799" y2="-0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 1 0)" stroke="#248CEC"/>
-            </svg>
-            <input class="modal-form__inputs" type="text" placeholder="Как вас зовут?">
-            <input class="modal-form__inputs" type="text" placeholder="Ваш номер телефона">
-            <input class="modal-form__inputs" type="text" placeholder="Ваш e-mail">
-            <input class="modal-form__btn" type="submit" value="Подать заявку">
-        </div> -->
-
-        <!-- <section class="pages-menu">
-            <div class="pages-menu__wrap-content">
-                 <a href="./index.html">
-                     <img class="pages-menu__logo" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="logo" data-src="./img/page-logo.png">
-                 </a>
-                 <ul class="pages-menu__desktop-menu">
-                     <li><a href="ekspedecii.html">экпедиции</a></li>
-                     <li><a href="eko-tours.html">экотуры</a></li>
-                     <li><a href="events.html">мероприятия</a></li>
-                     <li><a href="location.html">размещение</a></li>
-                     <li><a href="contacts.html">контакты</a></li>
-                 </ul>
-                 <div id="pages-humburger" class="pages-menu__humburger">
-                     <svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
-                         <path
-                                 class="line top"
-                                 d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
-                         <path
-                                 class="line middle"
-                                 d="m 30,50 h 40" />
-                         <path
-                                 class="line bottom"
-                                 d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
-                     </svg>
-                 </div>
-                 
+        <section class="bst-section">
+            <div class="bst-section__container">
+                <div class="event-item">
+                    <div class="event-item__wrp-img-text">
+                        <img class="event-item__img" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="alt" alt="logo" data-src="./img/for-events.jpg">
+                        <div class="event-item__wrp-text">
+                            <h1 class="event-item__header">Проведи мероприятие со смыслом</h1>
+                            <p class="event-item__text">
+                                На территории Байкальского заповедника (Республика Бурятия) 
+                                есть возможность провести мероприятие в <strong>конференц-зале,</strong>
+                                а также организовать банкет в <strong>кафетерии</strong> и на террасе 
+                                с панорамным видом на Байкал. На территории заповедника 
+                                также есть вся необходимая инфраструктура для размещения 
+                                гостей и туристов в эколого-туристических комплексах
+                                в течение всего года!
+                            </p>
+                            <div class="event-item__wrp-parameters">
+                                <p class="event-item__name-param">Вместимость конференц-зала</p>
+                                <p class="event-item__value_param">40 чел.</p>
+                            </div>
+                            <div class="event-item__wrp-parameters">
+                                <p class="event-item__name-param">Аренда конференц-зала</p>
+                                <p class="event-item__value_param">850 руб./час</p>
+                            </div>
+                            <div class="event-item__wrp-parameters">
+                                <p class="event-item__name-param">Аренда кафетерия</p>
+                                <p class="event-item__value_param">2 500 руб./час</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-item__wrp-btn">
+                        <button class="event-item__btn show-modal">Подать заявку</button>
+                    </div>
+                </div>
             </div>
-        </section> -->
-
-        <!-- <section class="developering">
-            <h1 class="developering__header">Страница находится на стадии разработки...</h1>
-            <img class="developering__mouse" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="alt" data-src="./img/mouse.jpg">
-            <p class="developering__text">В ближайшее время здесь появится что-то очень интересное!</p>
-        </section> -->
+        </section>
 
         <!-- <section class="footer">
             <div class="footer__wrap-content">
@@ -145,6 +143,20 @@
                 </div>
             </div>
         </section> -->
+
+        <div class="overlay"></div>
+
+        <div class="modal-form">
+            <h2 class="modal-form__header">заполните вашу заявку</h2>
+            <svg class="modal-form__close-btn" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="15.3536" y1="0.353553" x2="1.35355" y2="14.3536" stroke="#248CEC"/>
+                <line y1="-0.5" x2="19.799" y2="-0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 1 0)" stroke="#248CEC"/>
+            </svg>
+            <input class="modal-form__inputs" type="text" placeholder="Как вас зовут?">
+            <input class="modal-form__inputs" type="text" placeholder="Ваш номер телефона">
+            <input class="modal-form__inputs" type="text" placeholder="Ваш e-mail">
+            <input class="modal-form__btn" type="submit" value="Подать заявку">
+        </div>
 
 	</body>
 </html>

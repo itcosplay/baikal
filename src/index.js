@@ -1,5 +1,7 @@
 import './sass/reset.sass';
 import './sass/fonts.sass';
+import './sass/bst-grid.sass';
+import './sass/white-header.sass';
 // import './sass/variable.sass';
 // import './scss/slick.scss'
 import './css/humburger.css';
@@ -11,10 +13,10 @@ import './sass/travel-format.sass';
 import './sass/with-us.sass';
 import './sass/about-us.sass';
 import './sass/footer.sass';
-import './sass/pages-menu.sass';
 import './sass/tours.sass';
 import './sass/events.sass';
 import './sass/dev.sass';
+import './sass/event-item.sass';
 // import 'slick-carousel';
 
 
@@ -23,7 +25,9 @@ window.onload = () => {
     setImg();
     setBg();
     openMobileMenuOnMainPage();
-    openMobileMenuOtherPages();
+    openMobileMenu();
+    showAndCloseModal();
+    setHeightOnResize();
 };
 
 function heightSectionToEndScreen(section, menu) {
@@ -69,46 +73,37 @@ function openMobileMenuOnMainPage() {
     }
 }
 
-function openMobileMenuOtherPages() {
-    const pagesHumburger = document.getElementById('pages-humburger');
-    const mobMenu = document.querySelector('.pages-menu__wrap-mobile-menu');
+function openMobileMenu() {
+    let humburger = document.querySelector('.white-header__humburger');
+    let wrpMobileMenu = document.querySelector('.white-header__wrp-mobile-menu');
 
-    if (pagesHumburger !== null && mobMenu !== null) {
-        pagesHumburger.onclick = () => {
-            mobMenu.classList.toggle('show-mobile-pages-menu');
-            // mainContent.classList.toggle('hide-item');
+    if (humburger !== null && wrpMobileMenu !== null) {
+        humburger.onclick = () => {
+            if (wrpMobileMenu.classList.contains('active-mobile-menu')) {
+                wrpMobileMenu.style.height = '0px';
+                wrpMobileMenu.classList.remove('active-mobile-menu');
+            } else {
+                let header = document.querySelector('.white-header__wrp-logo-menu');
+                let headerHeith = window.getComputedStyle(header).height;
+                let clientHeight = document.documentElement.clientHeight;
+
+                headerHeith = Number(headerHeith.substring(0, headerHeith.length - 2));
+                wrpMobileMenu.style.height = `${clientHeight - headerHeith}px`;
+                wrpMobileMenu.classList.add('active-mobile-menu');
+            }
         }
     }
 }
 
-
-function main() {
-    
-    
-
-    window.onresize = () => {
-    
-        const mainContentWrap = document.querySelector('.wrap-main-content');
-
-        if (mainContentWrap !== null) {
-            let clientHeight = document.documentElement.clientHeight;
-            let wrapLogoMenu = document.querySelector('.wrap-logo-menu');
-            let wrapLogoMenuHeight = window.getComputedStyle(wrapLogoMenu).height;
-            wrapLogoMenuHeight = Number(wrapLogoMenuHeight.substring(0, wrapLogoMenuHeight.length - 2));
-            
-            mainContentWrap.style.height = `${clientHeight - wrapLogoMenuHeight - 40}px`;
-        }        
-    }
-
-    const mainContentBtn = document.querySelector('.main-content__button');
-    const modalCloseBtn = document.querySelector('.modal-form__close-btn');
-
+function showAndCloseModal() {
+    const btn = document.querySelector('.show-modal');
+    const closeModal = document.querySelector('.modal-form__close-btn');
     const sections = document.querySelectorAll('section');
     const overlay = document.querySelector('.overlay');
     const modalForm = document.querySelector('.modal-form');
 
-    if (mainContentBtn !== null) {
-        mainContentBtn.onclick = () => {
+    if (btn !== null) {
+        btn.onclick = () => {
         
             for (const section of sections) {
                 section.classList.add('have-blur');
@@ -119,8 +114,8 @@ function main() {
         }
     }
 
-    if (modalCloseBtn !== null) {
-        modalCloseBtn.onclick = () => {
+    if (closeModal !== null) {
+        closeModal.onclick = () => {
             for (const section of sections) {
                 section.classList.remove('have-blur');
             }
@@ -131,4 +126,18 @@ function main() {
     }
 }
 
-main();
+function setHeightOnResize() {
+    window.onresize = () => {
+        const mainContentWrap = document.querySelector('.wrap-main-content');
+
+        if (mainContentWrap !== null) {
+            let clientHeight = document.documentElement.clientHeight;
+            let wrapLogoMenu = document.querySelector('.wrap-logo-menu');
+            let wrapLogoMenuHeight = window.getComputedStyle(wrapLogoMenu).height;
+
+            wrapLogoMenuHeight = Number(wrapLogoMenuHeight.substring(0, wrapLogoMenuHeight.length - 2));
+            mainContentWrap.style.height = `${clientHeight - wrapLogoMenuHeight - 40}px`;
+        }        
+    }
+}
+
