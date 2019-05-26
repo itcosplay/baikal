@@ -1,19 +1,14 @@
 @import _variable
 
 .footer
-    align-items: center
     background-color: $about-foundation-header-color
-    display: flex
-    height: 11.25em
-    justify-content: center
-    margin: 2em 0 0 0
-    width: 100%
-    &__wrap-content
+    height: 11.125rem
+    margin-top: 8.75rem
+    &__container
         align-items: center
         display: flex
-        font-size: 1rem // <--- the main font-size ---
         justify-content: space-between
-        width: 73em
+
 .logo-text
     &__text
         color: white
@@ -21,8 +16,9 @@
         line-height: 1.46
         margin-top: 1em
         width: 21.7em
-.contacts
-    align-items: end
+
+.footer-contacts
+    align-items: flex-start
     display: flex
     flex-direction: column
     justify-content: space-between
@@ -41,45 +37,66 @@
         font: 500 0.9375em Montserrat-SemiBold
         margin-left: 1.35em
         text-decoration: none     
+
 .social-icons
     display: flex
     a:nth-child(2)
         margin-left: 2em
 
-@media (max-width: 1279px) // to 1024
-    .footer
-        &__wrap-content
-            font-size: .8rem // <------------ font-size for media
-
 @media (max-width: 1023px) // to 768
     .footer
-        &__wrap-content
-            font-size: .6rem // <------------ font-size for media
+        height: 100%
+        margin-top: 5.5rem
+        padding: 2em 0 2em 0
+    .logo-text
+        &__text
+            font: 500 0.8em Montserrat-Medium
+            line-height: 1.46
+            width: 15em
+    .footer-contacts
+        height: 3.2em
+        &__email
+            font: 500 0.8em Montserrat-SemiBold
+        &__tel
+            font: 500 0.8em Montserrat-SemiBold
+    .social-icons
+        display: flex
+        a:nth-child(2)
+            margin-left: 1em
+
+@media (max-width: 767px) // to 575px
+    .footer
+        &__container
+            align-items: center
+            display: flex
+            flex-direction: column
+            justify-content: center
+
+    .logo-text
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        width: 100%
+        &__text
+            width: 100%
+
+    .footer-contacts
+        align-items: center
+        margin-top: 1.5rem
+        width: 100%
+
+    .social-icons
+        display: flex
+        justify-content: center
+        margin-top: 2.5rem
+        width: 100%
+        a:nth-child(2)
+            margin-left: 2em
+    
 
 @media (max-width: 767px) // to 414
     .footer
-        height: 100%
-        padding: 1em 0 1em 0
-        &__wrap-content
-            flex-direction: column
-            font-size: 1rem // <------------ font-size for media
-            height: 20em
-            // justify-content: center
+        margin-top: 2.5rem
     .logo-text
-        align-items: center
-        display: flex
-        flex-direction: column
         &__text
             text-align: center
-    .contacts
-        align-items: center
-
-@media (max-width: 374px) // to 360
-    .footer
-        &__wrap-content
-            font-size: .9rem // <------------ font-size for media
-
-@media (max-width: 359px) // to 320
-    .footer
-        &__wrap-content
-            font-size: .85rem // <------------ font-size for media

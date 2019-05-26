@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     entry: [
@@ -14,7 +15,7 @@ module.exports = {
         filename: './[name].js'
     },
 
-    devtool: 'source-map',
+    // devtool: 'source-map',
 
     module: {
         rules: [
@@ -37,7 +38,7 @@ module.exports = {
                     },
                     {
                         loader: 'css-loader',
-                        options: { sourceMap: true }
+                        // options: { sourceMap: true }
                     },
                     {
                         loader: 'postcss-loader',
@@ -48,7 +49,7 @@ module.exports = {
                     },
                     {
                         loader: 'sass-loader',
-                        options: { sourceMap: true }
+                        // options: { sourceMap: true }
                     }
                 ]
             },
@@ -106,10 +107,22 @@ module.exports = {
             template: './src/contacts.html',
             filename: './contacts.html'
         }),
+        new HtmlWebpackPlugin({
+            hash: false,
+            template: './src/oleniy-fest.html',
+            filename: './oleniy-fest.html'
+        }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
             { from: './src/img', to: './img' },
             { from: './src/favicon', to: './favicon' },
-        ])
+        ]),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            // 'window.jQuery': 'jquery',
+            // Inputmask: 'inputmask',
+            // 'window.Inputmask': 'inputmask'
+        })
     ]
 }

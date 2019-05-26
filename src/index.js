@@ -1,5 +1,6 @@
 import './sass/reset.sass';
 import './sass/fonts.sass';
+import './scss/slick.scss'
 import './sass/bst-grid.sass';
 import './sass/white-header.sass';
 // import './sass/variable.sass';
@@ -15,20 +16,69 @@ import './sass/about-us.sass';
 import './sass/footer.sass';
 import './sass/tours.sass';
 import './sass/events.sass';
+import './sass/contacts.sass';
 import './sass/dev.sass';
 import './sass/event-item.sass';
-// import 'slick-carousel';
+import './sass/descr-tour.sass';
+
+
+import 'slick-carousel';
 
 
 window.onload = () => {
     heightSectionToEndScreen(document.querySelector('.wrap-main-content'), document.querySelector('.wrap-logo-menu'));
+    heightSectionToEndScreen(document.querySelector('.contacts'), document.querySelector('.white-header'));
     setImg();
     setBg();
     openMobileMenuOnMainPage();
     openMobileMenu();
     showAndCloseModal();
     setHeightOnResize();
+    startSlider();
+    setSlideBg();
+    showHideText();
 };
+
+
+function startSlider() {
+    if (document.querySelector('.tours-slider')) {
+        $('.tours-slider').slick({
+            arrows: false
+            // dots: false,
+            // infinite: true,
+            // speed: 300,
+            // slidesToShow: 1,
+            // adaptiveHeight: true
+        });
+    }
+
+    // let images = document.querySelector('.img-for-slider');
+    // images.onclick = () => {
+    //     console.log(1);
+    //     setSlideBg();
+    //     showToursSlider();
+    // }
+
+    // function showToursSlider() {
+    //     let slider = document.querySelector('.tours-slider');
+    //     slider.classList.toggle('hide-tours-slider');
+    //     slider.classList.toggle('show-tours-slider');
+    // }
+}
+
+function showHideText() {
+    let showHide = document.querySelectorAll('.show-hide-text');
+    let showHideFull = document.querySelector('.show-hide-text');
+    let text = document.querySelector('.text-info__text');
+
+    for (let i = 0; i < showHide.length; i++) {
+        showHide[i].onclick = () => {
+            text.classList.toggle('text-info__text_full');
+            showHideFull.classList.toggle('hide-span');
+        }
+        
+    }
+}
 
 function heightSectionToEndScreen(section, menu) {
     if (section !== null && menu !== null) {
@@ -36,7 +86,7 @@ function heightSectionToEndScreen(section, menu) {
         let menuHeight = window.getComputedStyle(menu).height;
 
         menuHeight = Number(menuHeight.substring(0, menuHeight.length - 2));
-        section.style.height = `${clientHeight - menuHeight - 40}px`;
+        section.style.height = `${clientHeight - menuHeight}px`;
     }
 }
 
@@ -52,6 +102,16 @@ function setImg() {
 
 function setBg() {
     var bgDefer = document.getElementsByClassName('set-background');
+
+    for (var i = 0; i<bgDefer.length; i++) {
+        if(bgDefer[i].getAttribute('data-bg')) {
+            bgDefer[i].setAttribute('style', bgDefer[i].getAttribute('data-bg'));
+        } 
+    }
+}
+
+function setSlideBg() {
+    var bgDefer = document.getElementsByClassName('set-slide-bg');
 
     for (var i = 0; i<bgDefer.length; i++) {
         if(bgDefer[i].getAttribute('data-bg')) {
@@ -128,16 +188,8 @@ function showAndCloseModal() {
 
 function setHeightOnResize() {
     window.onresize = () => {
-        const mainContentWrap = document.querySelector('.wrap-main-content');
-
-        if (mainContentWrap !== null) {
-            let clientHeight = document.documentElement.clientHeight;
-            let wrapLogoMenu = document.querySelector('.wrap-logo-menu');
-            let wrapLogoMenuHeight = window.getComputedStyle(wrapLogoMenu).height;
-
-            wrapLogoMenuHeight = Number(wrapLogoMenuHeight.substring(0, wrapLogoMenuHeight.length - 2));
-            mainContentWrap.style.height = `${clientHeight - wrapLogoMenuHeight - 40}px`;
-        }        
+        heightSectionToEndScreen(document.querySelector('.wrap-main-content'), document.querySelector('.wrap-logo-menu'));
+        heightSectionToEndScreen(document.querySelector('.contacts'), document.querySelector('.white-header'));      
     }
 }
 

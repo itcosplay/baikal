@@ -1,0 +1,133 @@
+@import _variable
+
+.img-for-slider
+    display: flex
+    justify-content: space-between
+    margin-top: 5em
+    &__big-img
+        background-position: center
+        background-size: cover
+        height: 22.125em
+        width: 48.25em
+        &:hover
+            box-shadow: 0 0.25em 1.875rem rgba(17, 127, 229, .5)
+            cursor: pointer
+    &__wrp-small-img
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        width: 23.5em
+    &__wrp-row-img
+        display: flex
+        justify-content: space-between
+        height: 6.875em
+        width: 23.5em
+    &__small-img
+        background-position: center
+        background-size: cover
+        height: 6.875em
+        width: 11.125em
+        &:hover
+            cursor: pointer
+            box-shadow: 0 0.25em 1.875rem rgba(17, 127, 229, .3)
+    
+.tours-slider
+    height: 31.25em
+    margin-top: 5em
+    width: 100%
+    div
+        background-position: center
+        background-size: cover
+        height: 100%
+        width: 100%
+    
+.hide-tours-slider
+    display: none
+
+// .show-tours-slider
+//     border: 4px solid blue
+//     display: block
+//     height: 31.25em
+//     width: 40em
+//     top: 50%
+//     left: 50%
+//     transform: translate(-50%, -50%)
+//     position: fixed
+
+.text-info
+    &__header
+        color: $modal-header-text-color
+        font: bold 1.5rem Montserrat-Bold
+        margin-top: 2em
+        text-transform: uppercase
+        width: 100%
+    &__text
+        font: 500 0.9375em Montserrat-Medium // font-size: 15px
+        height: 7rem
+        line-height: 1.76
+        margin-top: 1.5rem
+        overflow: hidden
+        transition: 1s
+        width: 67rem
+        span
+            color: $format-item-block-link-color
+            cursor: pointer
+            font: 500 1em Montserrat-Medium
+        &_small
+            height: 6.8rem
+        &_full
+            // height: 100%
+            // height: 21.5rem
+            height: auto
+    &__btn
+        background-color: $button-color
+        border: none
+        color: white
+        font: bold 1.125em 'Montserrat-Bold'
+        height: 3.5em
+        margin-top: 2em
+        outline: none
+        width: 13em
+        &:hover
+            background-color: $hover-btn
+        &:active
+            background-color: $button-color
+
+.hide-span
+    display: none
+
+.description-text
+    border-bottom: 1px solid #EDEDED
+    display: flex
+    margin-top: 1.5em
+    padding-bottom: 1.5em
+    width: 100%
+    &:nth-child(6)
+        margin-top: 4em
+    &__key
+        color: $parameter-name-color
+        font: bold 0.9375em Montserrat-Bold // font-size: 15px
+        width: 25%
+    &__value
+        color: $specify-header-text-color
+        font: bold 0.9375em Montserrat-Bold // font-size: 15px
+        width: 75%
+    &__additiona-descr
+        font: 500 1em Montserrat-Medium
+        margin-top: 1em
+        width: 83%
+    &__map
+        margin-top: 2em
+    .bold
+        font: bold 0.9375em Montserrat-Bold // font-size: 15px
+    
+
+.no-margin-top
+    margin-top: 0
+
+@media (max-width: 1279px) // to 1024
+    .img-for-slider
+        display: none
+    .hide-tours-slider
+        display: block
+    
