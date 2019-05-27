@@ -26,6 +26,7 @@ import 'slick-carousel';
 
 
 window.onload = () => {
+    // startSlider();
     heightSectionToEndScreen(document.querySelector('.wrap-main-content'), document.querySelector('.wrap-logo-menu'));
     heightSectionToEndScreen(document.querySelector('.contacts'), document.querySelector('.white-header'));
     setImg();
@@ -34,15 +35,23 @@ window.onload = () => {
     openMobileMenu();
     showAndCloseModal();
     setHeightOnResize();
-    startSlider();
+    // startSlider();
     setSlideBg();
     showHideText();
+    console.log('finish');
 };
 
+let slider = document.querySelector('.modal-slider');
+let images = document.querySelector('.img-for-slider');
+const overlay = document.querySelector('.overlay');
+// let bgDefer = document.getElementsByClassName('set-slide-bg');
 
-function startSlider() {
-    if (document.querySelector('.tours-slider')) {
-        $('.tours-slider').slick({
+images.onclick = () => {
+    // slider.classList.toggle('hide-tours-slider');
+    // setSlideBg(bgDefer);
+    overlay.classList.toggle('show-block');
+    if (!slider.classList.contains('active-slider')) {
+        $('.modal-slider').slick({
             arrows: false
             // dots: false,
             // infinite: true,
@@ -50,21 +59,66 @@ function startSlider() {
             // slidesToShow: 1,
             // adaptiveHeight: true
         });
+
+        slider.classList.add('active-slider');
     }
-
-    // let images = document.querySelector('.img-for-slider');
-    // images.onclick = () => {
-    //     console.log(1);
-    //     setSlideBg();
-    //     showToursSlider();
-    // }
-
-    // function showToursSlider() {
-    //     let slider = document.querySelector('.tours-slider');
-    //     slider.classList.toggle('hide-tours-slider');
-    //     slider.classList.toggle('show-tours-slider');
-    // }
+    
+    // setSlideBg(bgDefer);
 }
+
+overlay.onclick = () => {
+    overlay.classList.toggle('show-block');
+}
+
+$('.tours-slider').slick({
+    arrows: false
+    // dots: false,
+    // infinite: true,
+    // speed: 300,
+    // slidesToShow: 1,
+    // adaptiveHeight: true
+});
+
+
+
+// function startSlider() {
+//     // let slider = document.querySelector('.modal-slider');
+
+//     if (document.querySelector('.tours-slider')) {
+//         $('.tours-slider').slick({
+//             arrows: false
+//             // dots: false,
+//             // infinite: true,
+//             // speed: 300,
+//             // slidesToShow: 1,
+//             // adaptiveHeight: true
+//         });
+//     }
+
+//     // if (document.querySelector('.modal-slider')) {
+//     //     $('.modal-slider').slick({
+//     //         arrows: false
+//     //         // dots: false,
+//     //         // infinite: true,
+//     //         // speed: 300,
+//     //         // slidesToShow: 1,
+//     //         // adaptiveHeight: true
+//     //     });
+//     // }
+
+//     // let images = document.querySelector('.img-for-slider');
+//     // images.onclick = () => {
+//     //     console.log(1);
+//     //     setSlideBg();
+//     //     showToursSlider();
+//     // }
+
+//     // function showToursSlider() {
+//     //     let slider = document.querySelector('.tours-slider');
+//     //     slider.classList.toggle('hide-tours-slider');
+//     //     slider.classList.toggle('show-tours-slider');
+//     // }
+// }
 
 function showHideText() {
     let showHide = document.querySelectorAll('.show-hide-text');
@@ -110,10 +164,10 @@ function setBg() {
     }
 }
 
-function setSlideBg() {
+function setSlideBg(bgDefer) {
     var bgDefer = document.getElementsByClassName('set-slide-bg');
 
-    for (var i = 0; i<bgDefer.length; i++) {
+    for (var i = 0; i < bgDefer.length; i++) {
         if(bgDefer[i].getAttribute('data-bg')) {
             bgDefer[i].setAttribute('style', bgDefer[i].getAttribute('data-bg'));
         } 

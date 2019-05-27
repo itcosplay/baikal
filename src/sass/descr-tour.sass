@@ -121,9 +121,26 @@
     .bold
         font: bold 0.9375em Montserrat-Bold // font-size: 15px
     
-
 .no-margin-top
     margin-top: 0
+
+.modal-slider
+    border: 5px solid gray
+    height: 250px
+    left: 50%
+    position: fixed
+    top: 50%
+    transform: translate(-50%, -50%)
+    width: 600px
+    z-index: $modal-index
+    div
+        // background-position: center
+        // background-size: cover
+        height: 100%
+        width: 100%
+    img
+        height: 100%
+        width: 100%
 
 @media (max-width: 1279px) // to 1024
     .img-for-slider
