@@ -91,16 +91,17 @@ function startPageSlider() {
 }
 
 function showHideText() {
-    let showHide = document.querySelectorAll('.show-hide-text');
-    let showHideFull = document.querySelector('.show-hide-text');
-    let text = document.querySelector('.text-info__text');
+    let links = document.querySelectorAll('.text_info--open_close');
+    let fullText = document.querySelector('.text_info--text-full');
 
-    for (let i = 0; i < showHide.length; i++) {
-        showHide[i].onclick = () => {
-            text.classList.toggle('text-info__text_full');
-            showHideFull.classList.toggle('hide-span');
+    for (const link of links) {
+        link.onclick = () => {
+            fullText.classList.toggle('text_info--text-small');
+            
+            for (const link of links) {
+                link.classList.toggle('text_info--hide_span');
+            }
         }
-        
     }
 }
 
