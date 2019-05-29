@@ -116,13 +116,14 @@ module.exports = {
         new CopyWebpackPlugin([
             { from: './src/img', to: './img' },
             { from: './src/favicon', to: './favicon' },
+            { from: './src/mailModal.php', to: './mailModal.php' },
         ]),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
-            // 'window.jQuery': 'jquery',
-            // Inputmask: 'inputmask',
-            // 'window.Inputmask': 'inputmask'
+            'window.jQuery': 'jquery',
+            Inputmask: 'inputmask',
+            'window.Inputmask': 'inputmask'
         })
     ]
 }

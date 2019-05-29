@@ -16,17 +16,17 @@
 
         <div class="overlay"></div>
 
-        <div class="modal-form">
+        <form id="modalForm" class="modal-form" name="modalForm">
             <h2 class="modal-form__header">заполните вашу заявку</h2>
             <svg class="modal-form__close-btn" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <line x1="15.3536" y1="0.353553" x2="1.35355" y2="14.3536" stroke="#248CEC"/>
                 <line y1="-0.5" x2="19.799" y2="-0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 1 0)" stroke="#248CEC"/>
             </svg>
-            <input class="modal-form__inputs" type="text" placeholder="Как вас зовут?">
-            <input class="modal-form__inputs" type="text" placeholder="Ваш номер телефона">
-            <input class="modal-form__inputs" type="text" placeholder="Ваш e-mail">
+            <input class="modal-form__inputs" type="text" placeholder="Как вас зовут?" name="modalName">
+            <input id="modal-form__mask-phone" class="modal-form__inputs" type="text" placeholder="Ваш номер телефона" name="modalPhone">
+            <input class="modal-form__inputs" type="text" placeholder="Ваш e-mail" name="modalEmail">
             <input class="modal-form__btn" type="submit" value="Подать заявку">
-        </div>
+        </form>
         
         <section class="main set-background for-mobile" data-bg="background-image: url(./img/bajkal_1.jpg)">       
             <div class="wrap-content">

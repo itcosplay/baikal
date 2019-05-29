@@ -36,6 +36,35 @@ window.onload = () => {
     activeModalSlider();
 };
 
+$('#modalForm').submit(function() { // проверка на пустоту заполненных полей. Атрибут html5 — required не подходит (не поддерживается Safari)
+    if (document.modalForm.modalPhone.value == '' ) {
+        return false;
+    }
+
+    if (document.modalForm.modalName.value.length > 30) {
+        return false;
+    }
+
+    
+    $.ajax({
+        type: "POST",
+        url: "mailModal.php",
+        data: $(this).serialize()
+    }).done(function() {
+        console.log('message sended');
+        // $('.js-overlay-thank-you').fadeIn();
+        // $(this).find('input').val('');
+        $('#modalForm').trigger('reset');
+    });
+    
+    return false;
+});
+
+Inputmask({ mask: '+7 (999) 999-9999'}).mask(document.querySelectorAll('#modal-form__mask-phone'));
+
+
+
+
 function activeModalSlider() {
     let images = document.querySelectorAll('.show_modal_slider');
     let slider = document.querySelector('.modal_slider');
