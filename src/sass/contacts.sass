@@ -1,158 +1,164 @@
 @import _variable
 
 .contacts
+    display: block
+    position: relative
     width: 100%
     &__img
-        align-items: flex-end
         background-position: center 75%
         background-repeat: no-repeat
         background-size: cover
-        display: flex
         height: 55%
-        justify-content: center
+        top: 0
+        position: absolute
         width: 100%
     &__footer
         margin-top: 0
 
 .contacts-form
+    align-items: center
     background-color: white
-    box-shadow: 0 0.25em 1.875rem rgba(0, 0, 0, .08)
+    box-shadow: 0 0.25em 1.875em rgba(0, 0, 0, .08)
     display: flex
     font-size: 1rem
-    height: 25rem
-    justify-content: center
-    padding: 3rem 4.375rem
+    height: 25em
+    justify-content: space-between
+    left: 50%
+    padding: 0 4.375em // 70px
     position: absolute
-    transform: translateY(50%)
-    width: 66.8125rem
+    top: 50%
+    transform: translate(-50%, -50%)
+    width: 66.8125em
     &__form
+        // background-color: skyblue
         display: flex
         flex-direction: column
+        height: 19.0625em // 305px
         justify-content: space-between
-        padding-right: 5.125em
-        width: 100%
+        width: 25.3125em // 405px
     &__form-header
         color: $modal-header-text-color
-        font: bold 1.5rem Montserrat-Bold
+        font: bold 1.5em Montserrat-Bold
         text-transform: uppercase
         width: 100%
     &__input
         background-color: $modal-inputs-bg
         border: none
         color: darken($modal-inputs-placeholder-text-color, 50%)
-        font: bold 0.875em Montserrat-Bold // font-size: 14px
-        height: 4.2857em
+        font: bold .875em Montserrat-Bold // font-size: 14px
+        height: 4.2857em // px60
         padding-left: 2.4286em
-        width: 100%
+        width: 28.9286em // 405px
         &::placeholder
             color: $modal-inputs-placeholder-text-color
     &__btn
         background-color: $button-color
         border: none
-        font: bold 1.125em Montserrat-Bold
-        height: 3.33em
-        width: 13em
+        font: bold 1.125em Montserrat-Bold // 18px
+        height: 3.33em 
+        width: 13em // 234px
         &:hover
             background-color: $hover-btn
         &:active
             background-color: $button-color
     &__info
-        padding-left: 5.125em
-        width: 100%
+        // background-color: lightgreen
+        height: 19.0625em // 305px
+        width: 25.3125em // 405px
     &__wrp-img-text
         align-items: center
         display: flex
-        // margin-top: 2rem
         width: 100%
         &:nth-child(2)
-            margin-top: 2rem
+            margin-top: 2em
         &:nth-child(3)
-            margin-top: 1rem
+            margin-top: 1em
         &:nth-child(4)
-            margin-top: 1rem
+            margin-top: 1em
         &:nth-child(5)
-            margin-top: 1rem
+            margin-top: 1em
+        img
+            height: 2.25em
+            width: 2.25em
         p
-            font: 600 0.9375rem Montserrat-SemiBold
-            margin-left: 1.4rem
+            font: 600 0.9375em Montserrat-SemiBold  // 15px
+            margin-left: 1.5em
     &__line
         background-color: #E9E9E9
-        height: 100%
-        width: 3px
+        height: 20.1875em // 323px
+        width: 1px
 
 @media (max-width: 1279px) // to 1024
     .contacts-form
-        width: 58rem
+        font-size: .9rem
 
 @media (max-width: 1023px) // to 768
     .contacts-form
-        padding: 0
-        width: 33.4em
-        &__form
-            padding: 3em 4.375em
-        &__info
-            display: none
-        &__line
-            display: none
+        font-size: .65rem
 
 @media (max-width: 767px) // to 575px
     .contacts-form
+        flex-direction: column-reverse
+        flex-wrap: wrap
+        font-size: 1rem
+        height: auto
         padding: 0
-        width: 33.4em
-        &__form
-            padding: 3em 4.375em
+        width: 27.1875em //435px
+        &__line
+            height: 1px
+            width: 20.1875em // 323px
 
-@media (max-width: 574px) // to 414px
-    .contacts-form
-        padding: 0
-        height: 20rem
-        width: 20em
-        &__form
-            padding: 2.5em 1em
-        &__form-header
-            font: bold 1rem Montserrat-Bold
+// @media (max-width: 574px) // to 414px
+//     .contacts-form
+//         padding: 0
+//         height: 20rem
+//         width: 20em
+//         &__form
+//             padding: 2.5em 1em
+//         &__form-header
+//             font: bold 1rem Montserrat-Bold
 
-@media (max-width: 413px) // to 375
-    .contacts-form
-        padding: 0
-        height: 20rem
-        width: 20em
-        &__form
-            padding: 2.5em 1em
-        &__form-header
-            font: bold 1rem Montserrat-Bold
+// @media (max-width: 413px) // to 375
+//     .contacts-form
+//         padding: 0
+//         height: 20rem
+//         width: 20em
+//         &__form
+//             padding: 2.5em 1em
+//         &__form-header
+//             font: bold 1rem Montserrat-Bold
 
-@media (max-width: 374px) // to 360
-    .contacts-form
-        padding: 0
-        height: 20rem
-        width: 20em
-        &__form
-            padding: 2.5em 1em
-        &__form-header
-            font: bold 1rem Montserrat-Bold
+// @media (max-width: 374px) // to 360
+//     .contacts-form
+//         padding: 0
+//         height: 20rem
+//         width: 20em
+//         &__form
+//             padding: 2.5em 1em
+//         &__form-header
+//             font: bold 1rem Montserrat-Bold
 
-@media (max-width: 359px) // to 320
-    .contacts-form
-        padding: 0
-        height: 17rem
-        width: 18em
-        &__form
-            padding: 2.5em 1em
-        &__form-header
-            font: bold 1rem Montserrat-Bold
-        &__input
-            font: bold 0.6em Montserrat-Bold // font-size: 14px
-        &__btn
-            background-color: $button-color
-            border: none
-            font: bold .8em Montserrat-Bold
-            height: 3.33em
-            width: 13em
-            &:hover
-                background-color: $hover-btn
-            &:active
-                background-color: $button-color
+// @media (max-width: 359px) // to 320
+//     .contacts-form
+//         padding: 0
+//         height: 17rem
+//         width: 18em
+//         &__form
+//             padding: 2.5em 1em
+//         &__form-header
+//             font: bold 1rem Montserrat-Bold
+//         &__input
+//             font: bold 0.6em Montserrat-Bold // font-size: 14px
+//         &__btn
+//             background-color: $button-color
+//             border: none
+//             font: bold .8em Montserrat-Bold
+//             height: 3.33em
+//             width: 13em
+//             &:hover
+//                 background-color: $hover-btn
+//             &:active
+//                 background-color: $button-color
 
         
 

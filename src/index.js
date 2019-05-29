@@ -34,41 +34,57 @@ window.onload = () => {
     setSlideBg();
     showHideText();
     activeModalSlider();
-    console.log('finish');
 };
 
 function activeModalSlider() {
-    let images = document.querySelectorAll('.modal-slider-img');
-    let wrpSlider = document.querySelector('.wrp-modal-slider');
-    let close = document.querySelector('.modal-slider__close-cross');
-    let nextBtn = document.querySelector('.modal-slider__right-arrow');
-    let prevBtn = document.querySelector('.modal-slider__left-arrow');
+    let images = document.querySelectorAll('.show_modal_slider');
+    let slider = document.querySelector('.modal_slider');
+    let overlay = document.querySelector('.overlay_for_slider_modal');
+    let close = document.querySelector('.modal_slider--close_cross');
+    let nextBtn = document.querySelector('.modal_slider--next_btn');
+    let prevBtn = document.querySelector('.modal_slider--prev_btn');
+    const sections = document.querySelectorAll('section');
 
-    if (images != null && wrpSlider != null) {
+    if (images != null && slider != null) {
         for (const image of images) {
             image.onclick = () => {
-                if (wrpSlider.classList.contains('active-modal-slider')) {
-                    wrpSlider.classList.toggle('hide-modal-slider');
-                } else {
-                    wrpSlider.classList.toggle('hide-modal-slider');
-                    wrpSlider.classList.toggle('active-modal-slider');
+                if (slider.classList.contains('modal_slider-active')) {
+                    slider.classList.toggle('modal_slider-hidden');
+                    overlay.classList.toggle('overlay_for_slider_modal-hidden');
 
-                    $('.modal-slider').slick({
+                    for (const section of sections) {
+                        section.classList.add('have-blur');
+                    }
+                } else {
+                    slider.classList.toggle('modal_slider-hidden');
+                    overlay.classList.toggle('overlay_for_slider_modal-hidden');
+                    slider.classList.add('modal_slider-active');
+
+                    $('.modal_slider--slider').slick({
                         arrows: false,
                         dots: false,
                         infinite: true,
                     });
+
+                    for (const section of sections) {
+                        section.classList.add('have-blur');
+                    }
                 } 
             }
         }
 
         if (close != null) close.onclick = () => {
-            wrpSlider.classList.toggle('hide-modal-slider');
+            slider.classList.toggle('modal_slider-hidden');
+            overlay.classList.toggle('overlay_for_slider_modal-hidden');
+
+            for (const section of sections) {
+                section.classList.remove('have-blur');
+            }
         }
 
         if (nextBtn != null && prevBtn != null) {
-            nextBtn.onclick = () => $('.modal-slider').slick('slickNext');
-            prevBtn.onclick = () => $('.modal-slider').slick('slickPrev');
+            nextBtn.onclick = () => $('.modal_slider--slider').slick('slickNext');
+            prevBtn.onclick = () => $('.modal_slider--slider').slick('slickPrev');
         }   
     }  
 }

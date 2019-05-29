@@ -1,10 +1,93 @@
 @import _variable
 
-.img-for-slider
+.overlay_for_slider_modal
+    align-items: center
+    background-color: rgba(179, 179, 179, .5)
+    bottom: 0
+    display: flex
+    height: 100%
+    justify-content: center
+    left: 0px
+    position: fixed
+    right: 0
+    top: 0px
+    width: 100%
+    z-index: $overlay-index
+    &-hidden
+        display: none
+
+.modal_slider
+    border: 10px solid gray
+    height: 100%
+    position: relative
+    width: 100%
+    &-hidden
+        display: none
+    &--slider
+        height: 100%
+        width: 100%
+        div
+            height: 100%
+            width: 100%
+    &--slide
+        background-position: center center
+        background-size: cover
+    &--next_btn
+        cursor: pointer
+        right: 1em
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        z-index: $modal-index
+        svg
+            height: 4em
+            width: 4em
+    &--prev_btn
+        cursor: pointer
+        left: 1em
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        z-index: $modal-index
+        svg
+            height: 4em
+            width: 4em
+    &--close_cross
+        cursor: pointer
+        right: 1em
+        position: absolute
+        top: 1em
+        z-index: $modal-index
+        svg
+            height: 2em
+            width: 2em
+        
+        
+            
+        // img
+        //     height: 100%
+        //     width: 100%
+    // div
+    //     height: 100%
+    //     width: 100%
+    // img
+    //     height: 100%
+    //     width: 100%
+    
+    // &--wrp
+    //     height: 52rem // 823px
+    //     left: 50%
+    //     position: fixed
+    //     top: 50%
+    //     transform: translate(-50%, -50%)
+    //     width: 75rem // 1200px
+    //     z-index: 999
+
+.static_img
     display: flex
     justify-content: space-between
     margin-top: 5em
-    &__big-img
+    &--big_img
         background-position: center
         background-size: cover
         height: 22.125em
@@ -12,17 +95,17 @@
         &:hover
             box-shadow: 0 0.25em 1.875rem rgba(17, 127, 229, .5)
             cursor: pointer
-    &__wrp-small-img
+    &--wrp_small_img
         display: flex
         flex-direction: column
         justify-content: space-between
         width: 23.5em
-    &__wrp-row-img
+    &--wrp_row_img
         display: flex
         justify-content: space-between
         height: 6.875em
         width: 23.5em
-    &__small-img
+    &--small_img
         background-position: center
         background-size: cover
         height: 6.875em
@@ -30,7 +113,7 @@
         &:hover
             cursor: pointer
             box-shadow: 0 0.25em 1.875rem rgba(17, 127, 229, .3)
-    
+
 .page_slider
     height: 100%
     width: 100%
@@ -70,12 +153,12 @@
         background-size: cover
         height: 100%
         width: 100%
-
+  
 .text_info
-    &--header
+    margin-top: 2em
+    &--title
         color: $modal-header-text-color
         font: bold 1.5rem Montserrat-Bold
-        margin-top: 2em
         text-transform: uppercase
         width: 100%
     &--text
@@ -83,7 +166,6 @@
         line-height: 1.76
         margin-top: 1.5rem
         overflow: hidden
-        transition: 1s
         width: 100%
         &-full
             height: auto
@@ -104,7 +186,7 @@
         color: white
         font: bold 1.125em 'Montserrat-Bold'
         height: 3.5em
-        margin-top: 2em
+        margin-top: 2rem
         outline: none
         width: 13em
         &:hover
@@ -112,97 +194,70 @@
         &:active
             background-color: $button-color  
 
-.description-text
+.wrp_tour-properties
+    margin-top: 2rem   
+
+.tour_properties
     border-bottom: 1px solid #EDEDED
     display: flex
-    margin-top: 4.3125em // 69px
+    margin-top: 2rem
     padding-bottom: 1.5em
     width: 100%
-    &:nth-child(6)
-        margin-top: 4em
-    &__key
+    &--key
         color: $parameter-name-color
         font: bold 0.9375em Montserrat-Bold // font-size: 15px
         width: 25%
-    &__value
+    &--value
         color: $specify-header-text-color
         font: bold 0.9375em Montserrat-Bold // font-size: 15px
         width: 75%
-    &__additiona-descr
+    &--additional-descr
         font: 500 1em Montserrat-Medium
         margin-top: 1em
         width: 83%
-    &__map
+    &--map
         margin-top: 2em
         width: 100%
     .bold
         font: bold 0.9375em Montserrat-Bold // font-size: 15px
-    
-.no-margin-top
-    margin-top: 0
 
-.wrp-modal-slider
-    // display: none
-    height: 52rem // 823px
-    left: 50%
-    position: fixed
-    top: 50%
-    transform: translate(-50%, -50%)
-    width: 75rem // 1200px
-    z-index: 999
-    .modal-slider__left-arrow
-        cursor: pointer
-        height: 4em
-        left: 2em
-        position: absolute
-        top: 50%
-        transform: translateY(-50%)
-        width: 4em
-        z-index: $modal-index + 5
-    .modal-slider__right-arrow
-        cursor: pointer
-        height: 4em
-        right: 2em
-        position: absolute
-        top: 50%
-        transform: translateY(-50%)
-        width: 4em
-        z-index: $modal-index + 5
-    .modal-slider__close-cross
-        cursor: pointer
-        height: 4em
-        right: -4em
-        position: absolute
-        top: -4em
-        width: 4em
-        z-index: $modal-index + 5
-    svg
-        height: 100%
-        opacity: .5
+.route_map
+    margin-top: 4.5em // 72px
+    &--title
+        color: $modal-header-text-color
+        font: bold 1.5rem Montserrat-Bold
+        text-transform: uppercase
+        width: 100%
+    &--map
+        margin-top: 2em
         width: 100%
 
-.modal-slider
-    border: 10px solid rgba(0, 0, 0, .5)
-    border-radius: 5px
-    height: 100%
-    width: 100%
-    z-index: $modal-index
-    div
-        height: 100%
+.guides
+    margin-top: 6em // 97px
+    &--title
+        color: $modal-header-text-color
+        font: bold 1.5rem Montserrat-Bold
+        text-transform: uppercase
         width: 100%
-    img
-        height: 100%
+    &--wrp_guids_items 
+        display: flex
+    &--wrp_guides_btn
+        display: flex
+        justify-content: center
+        margin-top: 6.0625em // 97px
         width: 100%
-
-.hide-modal-slider
-    display: none
-
-.margin_guids_title
-    margin-top: 5rem
-
-.wrp_guids
-    // align-items: center
-    display: flex
+    &--btn
+        background-color: $button-color
+        border: none
+        color: white
+        font: bold 1.125em 'Montserrat-Bold'
+        height: 3.5em
+        outline: none
+        width: 13em
+        &:hover
+            background-color: $hover-btn
+        &:active
+            background-color: $button-color
 
 .guide_item
     font-size: 1rem
@@ -231,52 +286,74 @@
         margin: 1.5em 0 0 4.8125em // 24px 0 0 77px
         // margin-left: 4.8125em // 77px
     
-.wrp_btn_about_tour
-    display: flex
-    justify-content: center
-    margin-top: 6.0625em // 97px
-    width: 100%
-
 @media (max-width: 1279px) // to 1024
-    .img-for-slider
+    .static_img
         display: none
+
     .page_slider-hidden
         display: block
 
 @media (max-width: 1023px) // to 768
     .page_slider
         &--wrp
-            height: 20em
-    .text_info
-        &--wrp_info_btn
-            text-align: center
-    .description-text
-        &__additiona-descr
+            height: 25em
+    
+    .tour_properties
+        &--additional-descr
             width: 100%
     
 @media (max-width: 767px) // to 575px
     .page_slider
         &--wrp
+            margin-top: 2em
             height: 17em
+    
     .text_info
-        &--header
-            text-align: center
-    .wrp_guids
+        margin-top: 3rem
+    
+    .tour_properties
         flex-wrap: wrap
-        justify-content: center
-    .guide_item
-        &:nth-child(2)
-            margin: 2em 0 0 0 // 32 px 0 0 0
+        margin-top: 1rem
+        &--key
+            width: 100%
+        &--value
+            margin-top: 0rem
+            width: 100%
+        &--additional-descr
+            margin-top: 0.5rem
+        
+    .route_map
+        margin-top: 3rem
+    
+    .guides
+        margin-top: 3rem
+        &--wrp_guids_items
+            flex-wrap: wrap
+            // justify-content: center
+        
+    .guide_item:nth-child(2)
+        margin: 3rem 0 0 0 // 24px 0 0 0
 
 @media (max-width: 574px) // to 414px
     .page_slider
         &--wrp
-            height: 10em
-            margin-top: 2em
+            height: 12em
     .text_info
-        &--header
-            font: bold 1.2rem Montserrat-Bold
+        margin-top: 1em
+        &--text
+            margin-top: .5rem
+    .guides
+        &--wrp_guides_btn
+            margin-top: 3rem
 
+@media (max-width: 413px) // to 375
+    .text_info
+        &--btn
+            font: bold 0.9rem 'Montserrat-Bold'
+    .guides
+        &--btn
+            font: bold 0.9rem 'Montserrat-Bold'
 
+// @media (max-width: 374px) // to 360
 
-    
+// @media (max-width: 359px) // to 320
