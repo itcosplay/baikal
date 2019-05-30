@@ -54,10 +54,22 @@ $('#modalForm').submit(function() {
         url: "mailModal.php",
         data: $(this).serialize()
     }).done(function() {
-        console.log('message sended');
-        // $('.js-overlay-thank-you').fadeIn();
-        // $(this).find('input').val('');
+        $('.thank_window').fadeIn();
+        setTimeout(() => {
+            $('.thank_window').fadeOut();
+        }, 3000);
         $('#modalForm').trigger('reset');
+        console.log('message sended');
+        const sections = document.querySelectorAll('section');
+        const overlay = document.querySelector('.overlay');
+        const modalForm = document.querySelector('.modal-form');
+
+        overlay.classList.remove('show-block');
+        modalForm.classList.remove('show-block');
+        for (const section of sections) {
+            section.classList.remove('have-blur');
+        }
+        
     });
     
     return false;
