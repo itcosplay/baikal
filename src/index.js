@@ -20,10 +20,12 @@ import './sass/contacts.sass';
 import './sass/dev.sass';
 import './sass/event-item.sass';
 import './sass/descr-tour.sass';
+import './sass/index_2.sass';
 
 window.onload = () => {
     heightSectionToEndScreen(document.querySelector('.wrap-main-content'), document.querySelector('.wrap-logo-menu'));
     heightSectionToEndScreen(document.querySelector('.contacts'), document.querySelector('.white-header'));
+    // heightSectionToEndScreen(document.querySelector('.main_header--mobile_menu'), document.querySelector('.main_header--wrp_logo_desktop'));
     setImg();
     setBg();
     openMobileMenuOnMainPage();
@@ -34,9 +36,10 @@ window.onload = () => {
     setSlideBg();
     showHideText();
     activeModalSlider();
+    openMobileMenuOnMainPageNEW()
 };
 
-$('#modalForm').submit(function() { // проверка на пустоту заполненных полей. Атрибут html5 — required не подходит (не поддерживается Safari)
+$('#modalForm').submit(function() {
     if (document.modalForm.modalPhone.value == '' ) {
         return false;
     }
@@ -61,9 +64,6 @@ $('#modalForm').submit(function() { // проверка на пустоту за
 });
 
 Inputmask({ mask: '+7 (999) 999-9999'}).mask(document.querySelectorAll('#modal-form__mask-phone'));
-
-
-
 
 function activeModalSlider() {
     let images = document.querySelectorAll('.show_modal_slider');
@@ -203,6 +203,28 @@ function openMobileMenuOnMainPage() {
     }
 }
 
+function openMobileMenuOnMainPageNEW() {
+    let humburger = document.querySelector('.main_header--humburger');
+    let wrpMobileMenu = document.querySelector('.main_header--mobile_menu');
+
+    if (humburger !== null && wrpMobileMenu !== null) {
+        humburger.onclick = () => {
+            if (wrpMobileMenu.classList.contains('active-mobile-menu')) {
+                wrpMobileMenu.style.height = '0px';
+                wrpMobileMenu.classList.remove('active-mobile-menu');
+            } else {
+                let header = document.querySelector('.main_header--wrp_logo_desktop');
+                let headerHeith = window.getComputedStyle(header).height;
+                let clientHeight = document.documentElement.clientHeight;
+
+                headerHeith = Number(headerHeith.substring(0, headerHeith.length - 2));
+                wrpMobileMenu.style.height = `${clientHeight - headerHeith}px`;
+                wrpMobileMenu.classList.add('active-mobile-menu');
+            }
+        }
+    }
+}
+
 function openMobileMenu() {
     let humburger = document.querySelector('.white-header__humburger');
     let wrpMobileMenu = document.querySelector('.white-header__wrp-mobile-menu');
@@ -224,6 +246,8 @@ function openMobileMenu() {
         }
     }
 }
+
+
 
 function showAndCloseModal() {
     const btn = document.querySelectorAll('.show-modal');

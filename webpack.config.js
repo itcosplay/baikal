@@ -112,6 +112,11 @@ module.exports = {
             template: './src/oleniy-fest.html',
             filename: './oleniy-fest.html'
         }),
+        new HtmlWebpackPlugin({
+            hash: false,
+            template: './src/index_2.html',
+            filename: './index_2.html'
+        }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
             { from: './src/img', to: './img' },
