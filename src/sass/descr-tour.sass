@@ -1,5 +1,9 @@
 @import _variable
 
+.single_img
+    height: 31.25rem // 500px
+    margin-top: 5em
+
 .overlay_for_slider_modal
     align-items: center
     background-color: rgba(179, 179, 179, .5)
@@ -213,13 +217,15 @@
         color: $specify-header-text-color
         font: bold 0.9375em Montserrat-Bold // font-size: 15px
         width: 75%
-    &--additional-descr
+    &--additional_descr
         font: 500 1em Montserrat-Medium
         margin-top: 1em
         width: 83%
+        &-no_margin
+            margin-top: 0
     &--map
         margin-top: 2em
-        width: 100%
+        width: 100
     .bold
         font: bold 0.9375em Montserrat-Bold // font-size: 15px
 
@@ -228,11 +234,14 @@
     &--title
         color: $modal-header-text-color
         font: bold 1.5rem Montserrat-Bold
+        margin-bottom: 2.5rem
         text-transform: uppercase
         width: 100%
     &--map
         margin-top: 2em
         width: 100%
+    &--wrp_map
+        height: 31.25rem // 500px
 
 .guides
     margin-top: 6em // 97px
@@ -296,6 +305,9 @@
         display: block
 
 @media (max-width: 1023px) // to 768
+    .single_img
+        width: 100%
+
     .page_slider
         &--wrp
             height: 25em
@@ -305,6 +317,10 @@
             width: 100%
     
 @media (max-width: 767px) // to 575px
+    .single_img
+        height: 18.75rem // 300px
+        margin-top: 2rem
+
     .page_slider
         &--wrp
             margin-top: 2em
@@ -326,27 +342,38 @@
         
     .route_map
         margin-top: 3rem
+        &--wrp_map
+            height: 18.75em // 300px
     
     .guides
         margin-top: 3rem
         &--wrp_guids_items
-            flex-wrap: wrap
+            flex-direction: column
+            // flex-wrap: wrap
             // justify-content: center
         
     .guide_item:nth-child(2)
-        margin: 3rem 0 0 0 // 24px 0 0 0
+        margin: 4rem 0 0 0 // 24px 0 0 0
 
 @media (max-width: 574px) // to 414px
+    .single_img
+        height: 12.5em // 200px
+
     .page_slider
         &--wrp
             height: 12em
+
     .text_info
         margin-top: 1em
         &--text
             margin-top: .5rem
+
     .guides
         &--wrp_guides_btn
             margin-top: 3rem
+
+    .route_map
+        display: none
 
 @media (max-width: 413px) // to 375
     .text_info
@@ -355,7 +382,3 @@
     .guides
         &--btn
             font: bold 0.9rem 'Montserrat-Bold'
-
-// @media (max-width: 374px) // to 360
-
-// @media (max-width: 359px) // to 320

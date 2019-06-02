@@ -39,16 +39,22 @@ window.onload = () => {
     openMobileMenuOnMainPageNEW()
 };
 
+
 $('#modalForm').submit(function() {
-    if (document.modalForm.modalPhone.value == '' ) {
+    if (document.modalForm.phone.value == '' ) {
         return false;
     }
 
-    if (document.modalForm.modalName.value.length > 30) {
+    if (document.modalForm.name.value.length > 30) {
         return false;
     }
 
-    
+    if (document.modalForm.email) {
+        if (document.modalForm.email.value.length > 30) {
+            return false;
+        }
+    }
+
     $.ajax({
         type: "POST",
         url: "mailModal.php",
@@ -74,6 +80,27 @@ $('#modalForm').submit(function() {
     
     return false;
 });
+
+// $(document).ready(function() {
+
+// 	//E-mail Ajax Send
+// 	$("#modalForm").submit(function() { //Change
+// 		var th = $(this);
+// 		$.ajax({
+// 			type: "POST",
+// 			url: "mailModal.php", //Change
+// 			data: th.serialize()
+// 		}).done(function() {
+// 			alert("Thank you!");
+// 			setTimeout(function() {
+// 				// Done Functions
+// 				th.trigger("reset");
+// 			}, 1000);
+// 		});
+// 		return false;
+// 	});
+
+// });
 
 Inputmask({ mask: '+7 (999) 999-9999'}).mask(document.querySelectorAll('#modal-form__mask-phone'));
 

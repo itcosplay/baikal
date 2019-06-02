@@ -114,6 +114,26 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             hash: false,
+            template: './src/ohotniki-za-mechtoj.html',
+            filename: './ohotniki-za-mechtoj.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: false,
+            template: './src/medvezhi-zori.html',
+            filename: './medvezhi-zori.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: false,
+            template: './src/sibirskie-orhidei.html',
+            filename: './sibirskie-orhidei.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: false,
+            template: './src/ornitologicheskie-nablyudeniya.html',
+            filename: './ornitologicheskie-nablyudeniya.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: false,
             template: './src/index_2.html',
             filename: './index_2.html'
         }),
@@ -122,6 +142,7 @@ module.exports = {
             { from: './src/img', to: './img' },
             { from: './src/favicon', to: './favicon' },
             { from: './src/mailModal.php', to: './mailModal.php' },
+            { from: './src/mail.php', to: './mail.php' },
         ]),
         new webpack.ProvidePlugin({
             $: 'jquery',

@@ -4,9 +4,36 @@
 //     width: 3px
 
 .main
+    align-items: center
     height: 100vh
     position: relative
     width: 100%
+    &--title
+        color: white
+        font: 800 3em Montserrat-ExtraBold
+        text-align: center
+        text-transform: uppercase
+    &--sub_title
+        color: white
+        font: 600 1.5em Montserrat-SemiBold
+        line-height: 1.48
+        margin-top: 2rem
+        text-align: center
+    &--btn
+        background-color: $button-color
+        border: none
+        color: white
+        font: bold 1.125em 'Montserrat-Bold'
+        height: 3.75em
+        margin-left: 50%
+        margin-top: 3rem
+        outline: none
+        transform: translateX(-50%)
+        width: 13em
+        &:hover
+            background-color: $hover-btn
+        &:active
+            background-color: $button-color
 
 .main_header
     left: 50%
