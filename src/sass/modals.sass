@@ -12,7 +12,7 @@
     width: 100%
     z-index: $overlay-index
 
-.modal-form
+.modal_form
     background-color: $modal-color-bg
     box-shadow: 0 0.25em 6.25em rgba(0, 0, 0, .1)
     font: 1rem Montserrat-Bold
@@ -27,19 +27,19 @@
     visibility: hidden
     width: 38.375em
     z-index: $modal-index
-    &__header
+    &--header
         color: $modal-header-text-color
         font-size: 1.5em
         text-transform: uppercase
         margin-bottom: 2.625em
         width: 100%
-    &__close-btn
+    &--close-btn
         cursor: pointer
         position: absolute
         right: 3.4375em
         top: 2.6875em
         transform: translate(50%, -50%)
-    &__inputs
+    &--inputs
         background-color: $modal-inputs-bg
         border: none
         color: darken($modal-inputs-placeholder-text-color, 50%)
@@ -50,17 +50,9 @@
         width: 100%
         &::placeholder
             color: $modal-inputs-placeholder-text-color
-    &__btn
-        background-color: $button-color
-        border: none
-        font: bold 1.125em Montserrat-Bold
-        height: 3.33em
+    &--btn
+        @include primary_btn
         margin-top: 2.1em
-        width: 13em
-        &:hover
-            background-color: $hover-btn
-        &:active
-            background-color: $button-color
 
 .thank_window
     background-color: $hover-btn
@@ -83,14 +75,18 @@
     opacity: 1
     visibility: visible
 
-@media (max-width: 991px)
-    .modal-form
-        font-size: 0.8rem
+@media (max-width: 767px) // to 575px
+    .modal_form
+        font-size: .9rem
 
-@media (max-width: 767px)
-    .modal-form
-        font-size: 0.6rem
+@media (max-width: 574px) // to 414px
+    .modal_form
+        font-size: .6rem
 
-@media (max-width: 575px)
-    .modal-form
-        font-size: 0.4rem
+@media (max-width: 413px) // to 375
+    .modal_form
+        font-size: .55rem
+
+@media (max-width: 359px) // to 320
+    .modal_form
+        font-size: .5rem

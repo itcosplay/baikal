@@ -14,8 +14,8 @@
 
 <body>
 
-    <section class="bst-section white-header">
-        <div class="bst-section__container white-header__container">
+    <section class="bst_section white-header">
+        <div class="bst_section--container white-header__container">
             <div class="white-header__wrp-logo-menu">
                 <a href="./index.html">
                     <img class="white-header__logo" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="logo" data-src="./img/page-logo.png">
@@ -53,8 +53,8 @@
         </div>
     </section>
 
-    <section class="bst-section">
-        <div class="bst-section__container">
+    <section class="bst_section">
+        <div class="bst_section--container">
 
             <!-- singe image -->
             <img class="single_img"src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="./img/sibirskie-orhidei.jpg" alt="сибирские орхидеи">
@@ -255,8 +255,8 @@
         </div>    
     </section>
 
-    <section class="bst-section footer">
-        <div class="bst-section__container footer__container">
+    <section class="bst_section footer">
+        <div class="bst_section--container footer__container">
 
             <div class="logo-text">
                 <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="alt" class="logo-text__img" data-src="./img/logo.png">
@@ -316,20 +316,30 @@
         <h1 class="thank_window--text">Мы свяжемся с Вами в ближайшее время!</h1>
     </div>
 
-    <div class="overlay">
-        <form id="modalForm" class="modal-form" name="modalForm">
-            <h2 class="modal-form__header">заполните вашу заявку</h2>
-            <svg class="modal-form__close-btn" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="15.3536" y1="0.353553" x2="1.35355" y2="14.3536" stroke="#248CEC"/>
-                <line y1="-0.5" x2="19.799" y2="-0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 1 0)" stroke="#248CEC"/>
-            </svg>
-            <input type="hidden" name="form_subject" value="страница СИБИРСКИЕ ОРХИДЕИ">
-            <input class="modal-form__inputs" type="text" placeholder="Как вас зовут?" name="name">
-            <input id="modal-form__mask-phone" class="modal-form__inputs" type="text" placeholder="Ваш номер телефона" name="phone">
-            <input class="modal-form__inputs" type="text" placeholder="Ваш e-mail" name="email">
-            <input class="modal-form__btn" type="submit" value="Подать заявку">
-        </form>  
-    </div>
+<!-- overlay + form for description tours -->
+<div class="overlay">
+
+    <form class="modal_form" id="modalForm" name="modalForm">
+
+        <h2  class="modal_form--header">заполните вашу заявку</h2>
+        <svg class="modal_form--close-btn" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="15.3536" y1="0.353553" x2="1.35355" y2="14.3536" stroke="#248CEC"/>
+            <line y1="-0.5" x2="19.799" y2="-0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 1 0)" stroke="#248CEC"/>
+        </svg>
+
+        <!-- hidden input(s) -->
+        <input type="hidden" name="form_subject" value="страница СИБИРСКИЕ ОРХИДЕИ">
+        <!-- hidden input(s) -->
+
+        <input class="modal_form--inputs" type="text"  placeholder="Как вас зовут?"     name="name">
+        <input class="modal_form--inputs" type="text"  placeholder="Ваш номер телефона" name="phone" id="modal-form__mask-phone">
+        <input class="modal_form--inputs" type="text"  placeholder="Ваш e-mail"         name="email">
+        <input class="modal_form--btn"    type="submit" value="Подать заявку">
+
+    </form>
+            
+</div>
+<!-- overlay + form for description tours -->
 
     <div class="overlay_for_slider_modal overlay_for_slider_modal-hidden">
         <div class="modal_slider modal_slider-hidden">

@@ -1,26 +1,37 @@
-import 'slick-carousel';
-
+// defaults styles
 import './sass/reset.sass';
 import './sass/fonts.sass';
-import './scss/slick.scss';
-import './sass/bst-grid.sass';
+import './sass/default.sass';
+// styles for main page
+import './sass/mp--main.sass';
+import './sass/mp--features-desk.sass';
+import './sass/mp--features-mob.sass';
+import './sass/mp--choose_format.sass';
+import './sass/mp--travel_with_us.sass';
+import './sass/mp--about_us.sass';
+// styles white-header for pages with white bg
 import './sass/white-header.sass';
 import './css/humburger.css';
-import './sass/modals.sass';
-import './sass/main-section.sass';
-import './sass/specificity.sass';
-import './sass/specificity_mobile.sass';
-import './sass/travel-format.sass';
-import './sass/with-us.sass';
-import './sass/about-us.sass';
+// styles for footer for each pages
 import './sass/footer.sass';
+// styles for modal form for each pages
+import './sass/modals.sass';
+// styles for ecological and scientific tours pages
 import './sass/tours.sass';
+// styles for events page
 import './sass/events.sass';
+// styles for contacts page
 import './sass/contacts.sass';
-import './sass/dev.sass';
-import './sass/event-item.sass';
+// styles for description tour's page
 import './sass/descr-tour.sass';
-import './sass/index_2.sass';
+// styles for under development's page
+import './sass/dev.sass';
+// other styles
+import './sass/mp_2--main.sass';
+import './sass/mp_2--features.sass';
+// slick slider imports
+import 'slick-carousel';
+import './scss/slick.scss';
 
 window.onload = () => {
     heightSectionToEndScreen(document.querySelector('.wrap-main-content'), document.querySelector('.wrap-logo-menu'));
@@ -38,7 +49,6 @@ window.onload = () => {
     activeModalSlider();
     openMobileMenuOnMainPageNEW()
 };
-
 
 $('#modalForm').submit(function() {
     if (document.modalForm.phone.value == '' ) {
@@ -80,27 +90,6 @@ $('#modalForm').submit(function() {
     
     return false;
 });
-
-// $(document).ready(function() {
-
-// 	//E-mail Ajax Send
-// 	$("#modalForm").submit(function() { //Change
-// 		var th = $(this);
-// 		$.ajax({
-// 			type: "POST",
-// 			url: "mailModal.php", //Change
-// 			data: th.serialize()
-// 		}).done(function() {
-// 			alert("Thank you!");
-// 			setTimeout(function() {
-// 				// Done Functions
-// 				th.trigger("reset");
-// 			}, 1000);
-// 		});
-// 		return false;
-// 	});
-
-// });
 
 Inputmask({ mask: '+7 (999) 999-9999'}).mask(document.querySelectorAll('#modal-form__mask-phone'));
 
@@ -286,14 +275,12 @@ function openMobileMenu() {
     }
 }
 
-
-
 function showAndCloseModal() {
     const btn = document.querySelectorAll('.show-modal');
-    const closeModal = document.querySelector('.modal-form__close-btn');
+    const closeModal = document.querySelector('.modal_form--close-btn');
     const sections = document.querySelectorAll('section');
     const overlay = document.querySelector('.overlay');
-    const modalForm = document.querySelector('.modal-form');
+    const modalForm = document.querySelector('.modal_form');
 
     if (btn !== null) {
         for (const button of btn) {

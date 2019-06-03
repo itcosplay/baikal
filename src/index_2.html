@@ -14,8 +14,8 @@
 
 <body>
 
-<section class="bst-section main set-background" data-bg="background-image: url(./img/bajkal_1.jpg)">
-    <div class="bst-section__container main--wrp_content">
+<section class="bst_section main set-background" data-bg="background-image: url(./img/bajkal_1.jpg)">
+    <div class="bst_section--container main--wrp_content">
         <h1 class="main--title">baikal sustainable tourism</h1>
         <h4 class="main--sub_title">Новый формат научно-позновательного<br>экологического туризма на Байкале</h4>
         <button class="main--btn show-modal">Подать заявку</button>
@@ -60,8 +60,92 @@
 
 </section>
 
-<section class="bst-section footer">
-    <div class="bst-section__container footer__container">
+<section class="bst_section features">
+    <div class="bst_section--container">
+
+        <div class="feature_item">
+            <img class="feature_item--img" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" data-src="./img/uniqueness_1.jpg">
+            <div class="feature_item--wrp_text">
+                <h1 class="feature_item--title">уникальные маршруты экспедиций</h1>
+                <p class="feature_item--sub_title">
+                    У Вас есть возможность принять участие
+                    в настоящей исследовательской экспедиции
+                    и посетить уникальные места, доступные только
+                    гидам-ученым.
+                </p>
+            </div>
+        </div>
+
+        <div class="feature_item">
+            <img class="feature_item--img" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" data-src="./img/uniqueness_2.jpg">
+            <div class="feature_item--wrp_text">
+                <h1 class="feature_item--title">развитие устойчивого туризма на оопт</h1>
+                <p class="feature_item--sub_title">
+                    В результате перехода на устойчивую модель
+                    развития туризма в Байкальском регионе
+                    предполагается снижение антропогенной нагрузки
+                    на территорию, а также повышение уровня знаний
+                    о природе региона и воспитание бережного к ней
+                    отношения.
+                </p>
+            </div>
+        </div>
+
+        <div class="feature_item">
+            <img class="feature_item--img" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" data-src="./img/uniqueness_3.jpg">
+            <div class="feature_item--wrp_text">
+                <h1 class="feature_item--title">развитие социального предпринимательства и сохранение природных</h1>
+                <p class="feature_item--sub_title">
+                    Прибыль от продажи туристических маршрутов
+                    перечисляется в организацию-учредитель Фонд
+                    «Озеро Байкал» и распределяется на грантовые
+                    программы по поддержке науки и решению
+                    инфраструктурных проблем ООПТ.
+                </p>
+            </div>
+        </div>
+
+        <div class="feature_mobile_item">
+            <h1 class="feature_mobile_item--title">уникальные маршруты экспедиций</h1>
+            <img class="feature_mobile_item--img" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" data-src="./img/uniqueness_1.jpg">
+            <p class="feature_mobile_item--sub_title">
+                У Вас есть возможность принять участие
+                в настоящей исследовательской экспедиции
+                и посетить уникальные места, доступные только
+                гидам-ученым.
+            </p>
+        </div>
+
+        <div class="feature_mobile_item">
+            <h1 class="feature_mobile_item--title">развитие устойчивого туризма на оопт</h1>
+            <img class="feature_mobile_item--img" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" data-src="./img/uniqueness_2.jpg">
+            <p class="feature_mobile_item--sub_title">
+                В результате перехода на устойчивую модель
+                развития туризма в Байкальском регионе
+                предполагается снижение антропогенной нагрузки
+                на территорию, а также повышение уровня знаний
+                о природе региона и воспитание бережного к ней
+                отношения.
+            </p>
+        </div>
+
+        <div class="feature_mobile_item">
+            <h1 class="feature_mobile_item--title">развитие социального предпринимательства и сохранение природных</h1>
+            <img class="feature_mobile_item--img" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" data-src="./img/uniqueness_3.jpg">
+            <p class="feature_mobile_item--sub_title">
+                Прибыль от продажи туристических маршрутов
+                перечисляется в организацию-учредитель Фонд
+                «Озеро Байкал» и распределяется на грантовые
+                программы по поддержке науки и решению
+                инфраструктурных проблем ООПТ.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="bst_section footer">
+    <div class="bst_section--container footer__container">
 
         <div class="logo-text">
             <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="alt" class="logo-text__img" data-src="./img/logo.png">
@@ -116,24 +200,37 @@
     </div>
 </section>
 
+<!-- overlay -->
 <div class="overlay"></div>
+<!-- overlay -->
 
-<form id="modalForm" class="modal-form" name="modalForm">
-    <h2 class="modal-form__header">заполните вашу заявку</h2>
-    <svg class="modal-form__close-btn" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- modal form -->
+<form class="modal_form" id="modalForm" name="modalForm">
+
+    <h2  class="modal_form--header">заполните вашу заявку</h2>
+    <svg class="modal_form--close-btn" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="15.3536" y1="0.353553" x2="1.35355" y2="14.3536" stroke="#248CEC"/>
         <line y1="-0.5" x2="19.799" y2="-0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 1 0)" stroke="#248CEC"/>
     </svg>
-    <input class="modal-form__inputs" type="text" placeholder="Как вас зовут?" name="modalName">
-    <input id="modal-form__mask-phone" class="modal-form__inputs" type="text" placeholder="Ваш номер телефона" name="modalPhone">
-    <input class="modal-form__inputs" type="text" placeholder="Ваш e-mail" name="modalEmail">
-    <input class="modal-form__btn" type="submit" value="Подать заявку">
-</form>
 
+    <!-- hidden input(s) -->
+    <input type="hidden" name="form_subject" value="ГЛАВНАЯ СТРАНИЦА">
+    <!-- hidden input(s) -->
+
+    <input class="modal_form--inputs" type="text"  placeholder="Как вас зовут?"     name="name">
+    <input class="modal_form--inputs" type="text"  placeholder="Ваш номер телефона" name="phone" id="modal-form__mask-phone">
+    <input class="modal_form--inputs" type="text"  placeholder="Ваш e-mail"         name="email">
+    <input class="modal_form--btn"    type="submit" value="Подать заявку">
+
+</form>
+<!-- modal form -->
+
+<!-- thank for request -->
 <div class="thank_window">
     <h1 class="thank_window--title">Ваша заявка принята!</h1>
     <h1 class="thank_window--text">Мы свяжемся с Вами в ближайшее время!</h1>
 </div>
+<!-- thank for request -->
 
 </body>
 </html>
