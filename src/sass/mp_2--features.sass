@@ -39,6 +39,7 @@
         width: 100%
     
 .feature_mobile_item
+    display: none
     flex-direction: column
     padding-top: 2em //80px
     width: 100%
@@ -49,14 +50,13 @@
         text-transform: uppercase
         width: 100%
     &--img
-        // height: 22.5em // 352px
-        // width: 35.875em // 574px
-        width: 100%
+        margin-top: 1em
+        width: 75%
     &--sub_title
         color: $specify-text-color
         font: 500 0.9375em Montserrat-Medium // 15px
         line-height: 1.76
-        // margin-top: 1.87em // 28px
+        margin-top: 1em // 28px
         width: 100%
 
 @media (max-width: 1279px) // to 1024
@@ -75,3 +75,14 @@
         display: none
     .feature_mobile_item
         display: flex
+
+@media (max-width: 767px) // to 575px
+    .feature_mobile_item
+        &--img
+            width: 100%
+
+@media (max-width: 574px) // to 414px
+    .feature_mobile_item
+        &--title
+            font-size: .9rem
+            // text-align: center

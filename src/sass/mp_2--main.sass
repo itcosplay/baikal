@@ -17,8 +17,12 @@
         color: white
         font: 600 1.5em Montserrat-SemiBold
         line-height: 1.48
+        margin-left: 50%
         margin-top: 2rem
         text-align: center
+        transform: translateX(-50%)
+        max-width: 40rem
+        width: 100%
     &--btn
         background-color: $button-color
         border: none
@@ -102,6 +106,14 @@
         padding: 0 2rem 0
 
 @media (max-width: 574px) // to 414px
+    .main
+        &--title
+            font-size: 2rem
+        &--sub_title
+            font-size: 1rem
+            margin-top: 1rem
+        &--btn
+            margin-top: 1rem
     .main_header
         padding: 0 1.5rem 0
 
@@ -114,5 +126,8 @@
         padding: 0 .5rem 0
 
 @media (max-width: 359px) // to 320
+    .main
+        &--title
+            font-size: 1.5rem
     .main_header
         padding: 0 .3rem 0
