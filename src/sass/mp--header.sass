@@ -1,42 +1,4 @@
-@import variable
-
-// body::-webkit-scrollbar
-//     width: 3px
-
-.main
-    align-items: center
-    height: 100vh
-    width: 100%
-    &--title
-        color: white
-        font: 800 3em Montserrat-ExtraBold
-        text-align: center
-        text-transform: uppercase
-    &--sub_title
-        color: white
-        font: 600 1.5em Montserrat-SemiBold
-        line-height: 1.48
-        margin-left: 50%
-        margin-top: 2rem
-        text-align: center
-        transform: translateX(-50%)
-        max-width: 40rem
-        width: 100%
-    &--btn
-        background-color: $button-color
-        border: none
-        color: white
-        font: bold 1.125em 'Montserrat-Bold'
-        height: 3.75em
-        margin-left: 50%
-        margin-top: 3rem
-        outline: none
-        transform: translateX(-50%)
-        width: 13em
-        &:hover
-            background-color: $hover-btn
-        &:active
-            background-color: $button-color
+@import _variables
 
 .main_header
     left: 50%
@@ -52,9 +14,8 @@
         overflow: hidden
         width: 100%
     &--logo
-        font-size: 16px
-        height: 2.5625em
-        width: 5.8125em
+        height: 2.5625em // 41px
+        width: 5.8125em // 93px
     &--desktop_menu
         display: flex
         justify-content: space-between
@@ -86,7 +47,7 @@
             font: bold 1.8em Montserrat-ExtraBold
             text-decoration: none
             text-transform: uppercase
-    
+
 @media (max-width: 1279px) // to 1024
     .main_header
         padding: 0 3rem 0
@@ -105,14 +66,6 @@
         padding: 0 2rem 0
 
 @media (max-width: 574px) // to 414px
-    .main
-        &--title
-            font-size: 2rem
-        &--sub_title
-            font-size: 1rem
-            margin-top: 1rem
-        &--btn
-            margin-top: 1rem
     .main_header
         padding: 0 1.5rem 0
 
@@ -122,11 +75,8 @@
 
 @media (max-width: 374px) // to 360
     .main_header
-        padding: 0 .5rem 0
+        padding: 0 .75rem 0
 
 @media (max-width: 359px) // to 320
-    .main
-        &--title
-            font-size: 1.5rem
     .main_header
-        padding: 0 .3rem 0
+        padding: 0 .55rem 0
