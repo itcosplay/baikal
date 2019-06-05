@@ -47,7 +47,8 @@ window.onload = () => {
     setSlideBg();
     showHideText();
     activeModalSlider();
-    openMobileMenuOnMainPageNEW()
+    openMobileMenuOnMainPageNEW();
+    // deleteBlureModal();
 };
 
 $('#modalForm').submit(function() {
@@ -70,22 +71,26 @@ $('#modalForm').submit(function() {
         url: "mailModal.php",
         data: $(this).serialize()
     }).done(function() {
+        
+        $('#modalForm').trigger('reset');
+
+        // const sections = document.querySelectorAll('section');
+        
+        // for (const section of sections) {
+        //     section.classList.remove('have-blur');
+        // }
+
         $('.thank_window').fadeIn();
         setTimeout(() => {
             $('.thank_window').fadeOut();
+            deleteBlureModal();
+            const overlay = document.querySelector('.overlay');
+            const modalForm = document.querySelector('.modal_form');
+            overlay.classList.remove('show-block');
+            modalForm.classList.remove('show-block');
         }, 3000);
-        $('#modalForm').trigger('reset');
-        console.log('message sended');
-        const sections = document.querySelectorAll('section');
-        const overlay = document.querySelector('.overlay');
-        const modalForm = document.querySelector('.modal-form');
-
-        overlay.classList.remove('show-block');
-        modalForm.classList.remove('show-block');
-        for (const section of sections) {
-            section.classList.remove('have-blur');
-        }
         
+        console.log('message sended'); 
     });
     
     return false;
@@ -281,6 +286,7 @@ function showAndCloseModal() {
     const sections = document.querySelectorAll('section');
     const overlay = document.querySelector('.overlay');
     const modalForm = document.querySelector('.modal_form');
+    // deleteBlureModal();
 
     if (btn !== null) {
         for (const button of btn) {
@@ -305,6 +311,18 @@ function showAndCloseModal() {
             modalForm.classList.remove('show-block');
         }
     }
+}
+
+function deleteBlureModal() {
+    // let button = document.querySelector('.modal_form--btn');
+    
+    // button.onclick = () => {
+        const sections = document.querySelectorAll('section');
+
+        for (const section of sections) {
+            section.classList.remove('have-blur');
+        }
+    // }
 }
 
 function setHeightOnResize() {
