@@ -2,8 +2,6 @@
 
 $recepient = "help@baikalfoundation.ru";
 $siteName = "B-S-T.RU";
-$recepient2 = "azure_dream@mail.ru";
-$recepient3 = "nigoritsa@baikalfoundation.ru";
 
 $phone        = trim($_POST["phone"]);
 $name         = trim($_POST["name"]);
@@ -15,8 +13,6 @@ $message = "$form_subject. Имя - $name, Номер телефона - $phone,
 $pagetitle = "Заявка с сайта \"$siteName\"";
 
 mail($recepient,  $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");
-mail($recepient2, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient2");
-mail($recepient3, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient3");
 
 ?>
 
