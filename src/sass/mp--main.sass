@@ -1,14 +1,16 @@
 @import _variables
 
-// body::-webkit-scrollbar
-//     width: 3px
-
 .main
-    align-items: center
     background-position: center center
     background-size: cover
-    height: 100vh
+    min-height: 100vh
     width: 100%
+    &--wrp_content
+        align-items: center
+        display: flex
+        flex-direction: column
+        justify-content: center
+        min-height: 100vh
     &--title
         color: white
         font: 800 3em Montserrat-ExtraBold
@@ -18,20 +20,66 @@
         color: white
         font: 600 1.5em Montserrat-SemiBold
         line-height: 1.48
-        margin-left: 50%
         margin-top: 2rem
         text-align: center
-        transform: translateX(-50%)
         max-width: 40rem
         width: 100%
     &--btn
         @include btn_style
-        margin-left: 50%
         margin-top: 3rem
-        transform: translateX(-50%)
         width: 13em // 234px
-        
 
+@media screen and (orientation:landscape)
+    body::-webkit-scrollbar
+        width: 0
+
+    // .main
+    //     &--wrp_content
+    //         padding: 8rem 0 3rem 0
+    //     &--title
+    //         font-size: 1.5rem
+    //     &--sub_title
+    //         font-size: 1rem
+    //         line-height: 1.2
+    //         margin-top: 1rem
+    //     &--btn
+    //         font-size: .9rem
+    //         margin-top: 1.5rem
+
+@media (max-width: 1279px) // to 1024
+    body::-webkit-scrollbar
+        width: 0
+
+@media (max-width: 767px) // to 575px
+    .main
+        &--title
+            font-size: 1.5rem
+        &--sub_title
+            font-size: 1rem
+            line-height: 1.2
+            margin-top: 1rem
+        &--btn
+            margin-top: 1.5rem
+        
+@media (max-width: 574px) // to 414px
+    .main
+        &--title
+            font-size: 1.2rem
+        &--sub_title
+            font-size: .9rem
+        &--btn
+            font-size: .9rem
+
+@media (max-width: 359px) // to 320
+    .main
+        &--title
+            font-size: 1rem
+        &--sub_title
+            font-size: .8rem
+            margin-top: .75rem
+        &--btn
+            margin-top: 1rem
+            font-size: .75rem
 
     
 
