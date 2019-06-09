@@ -4,13 +4,21 @@
     background-position: center center
     background-size: cover
     min-height: 100vh
+    transition: .5s
     width: 100%
+    &-rotate
+        height: 500px
     &--wrp_content
         align-items: center
         display: flex
         flex-direction: column
         justify-content: center
         min-height: 100vh
+        // &-rotate
+        //     padding-bottom: 5rem
+        //     padding-top: 10rem
+        &-hidden
+            display: none
     &--title
         color: white
         font: 800 3em Montserrat-ExtraBold
@@ -28,23 +36,6 @@
         @include btn_style
         margin-top: 3rem
         width: 13em // 234px
-
-@media screen and (orientation:landscape)
-    body::-webkit-scrollbar
-        width: 0
-
-    // .main
-    //     &--wrp_content
-    //         padding: 8rem 0 3rem 0
-    //     &--title
-    //         font-size: 1.5rem
-    //     &--sub_title
-    //         font-size: 1rem
-    //         line-height: 1.2
-    //         margin-top: 1rem
-    //     &--btn
-    //         font-size: .9rem
-    //         margin-top: 1.5rem
 
 @media (max-width: 1279px) // to 1024
     body::-webkit-scrollbar

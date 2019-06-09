@@ -14,15 +14,17 @@
 
 <body>
 
+<!-- section main -->
 <section class="bst_section main set_background" data-bg="background-image: url(./img/main_bg.jpg)">
-    <div class="bst_section--container main--wrp_content main--wrp_content">
+    <div class="bst_section--container main--wrp_content main--wrp_content-rotate">
         <h1 class="main--title main--title">baikal sustainable tourism</h1>
         <h4 class="main--sub_title main--sub_title">Новый формат научно-позновательного экологического туризма на Байкале</h4>
         <button class="main--btn main--btn show_modal">Подать заявку</button>
     </div>
 </section>
 
-<!-- <section class="bst_section features">
+<!-- section features -->
+<section class="bst_section features">
     <div class="bst_section--container">
 
         <div class="feature_item">
@@ -104,7 +106,33 @@
         </div>
 
     </div>
-</section> -->
+</section>
+
+<!-- section choose -->
+<section class="bst_section choose">
+    <div class="bst_section--container">
+        <h1 class="choose--title">Выберите свой формат путешествий</h1>
+        <div class="choose--wrp">
+
+            <div class="choose_item">
+                <div class="choose_item--wrp_content">
+                    <div class="choose_item--img set_background" data-bg="background-image: url(./img/choose_sci.jpg)"></div>
+                    <h2 class="choose_item--title">научный туризм</h2>
+                    <p class="choose_item--sub_title">Научно-познавательные походы, экспедиции, лекции.</p>
+                </div>
+                <a href="#" class="choose_item--link">
+                    <p>Подробнее</p>
+                    <svg width="44" height="8" viewBox="0 0 44 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M43.3536 4.35355C43.5488 4.15829 43.5488 3.84171 43.3536 3.64645L40.1716 0.464466C39.9763 0.269204 39.6597 0.269204 39.4645 0.464466C39.2692 0.659728 39.2692 0.976311 39.4645 1.17157L42.2929 4L39.4645 6.82843C39.2692 7.02369 39.2692 7.34027 39.4645 7.53553C39.6597 7.7308 39.9763 7.7308 40.1716 7.53553L43.3536 4.35355ZM0 4.5H43V3.5H0V4.5Z" fill="#248CEC"/>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
 
 <!-- <section class="bst_section footer">
     <div class="bst_section--container footer__container">
@@ -199,32 +227,29 @@
         <li><a href="#">контакты</a></li>
     </ul>
 </div>
-<!-- header, position absolute by main section -->
 
 <!-- overlay -->
-<!-- <div class="overlay"></div> -->
-<!-- overlay -->
+<div class="overlay"></div>
 
 <!-- modal form -->
-<!-- <form class="modal_form" id="modalForm" name="modalForm">
+<form class="modal_form" id="modalForm" name="modalForm">
 
     <h2  class="modal_form--header">заполните вашу заявку</h2>
     <svg class="modal_form--close-btn" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="15.3536" y1="0.353553" x2="1.35355" y2="14.3536" stroke="#248CEC"/>
         <line y1="-0.5" x2="19.799" y2="-0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 1 0)" stroke="#248CEC"/>
-    </svg> -->
+    </svg>
 
     <!-- hidden input(s) -->
-    <!-- <input type="hidden" name="form_subject" value="ГЛАВНАЯ СТРАНИЦА"> -->
+    <input type="hidden" name="form_subject" value="ГЛАВНАЯ СТРАНИЦА">
     <!-- hidden input(s) -->
 
-    <!-- <input class="modal_form--inputs" type="text"  placeholder="Как вас зовут?"     name="name">
+    <input class="modal_form--inputs" type="text"  placeholder="Как вас зовут?"     name="name">
     <input class="modal_form--inputs" type="text"  placeholder="Ваш номер телефона" name="phone" id="modal-form__mask-phone">
     <input class="modal_form--inputs" type="text"  placeholder="Ваш e-mail"         name="email">
-    <input class="modal_form--btn"    type="submit" value="Подать заявку">
+    <input class="modal_form--btn show_modal"    type="submit" value="Подать заявку">
 
-</form> -->
-<!-- modal form -->
+</form>
 
 <!-- thank for request -->
 <!-- <div class="thank_window">

@@ -1,11 +1,10 @@
-// defaults styles
 import './sass/reset.sass';
 import './sass/fonts.sass';
 import './sass/default.sass';
-// styles for main page
+
 import './sass/mp--header.sass';
 import './sass/mp--main.sass';
-// import './sass/mp--features-desk.sass';
+import './sass/mp--features.sass';
 // import './sass/mp--features-mob.sass';
 // import './sass/mp--choose_format.sass';
 // import './sass/mp--travel_with_us.sass';
@@ -15,8 +14,7 @@ import './sass/mp--main.sass';
 import './css/humburger.css';
 // styles for footer for each pages
 // import './sass/footer.sass';
-// styles for modal form for each pages
-// import './sass/modals.sass';
+
 // styles for ecological and scientific tours pages
 // import './sass/tours.sass';
 // styles for events page
@@ -30,6 +28,8 @@ import './css/humburger.css';
 // other styles
 // import './sass/mp_2--main.sass';
 // import './sass/mp_2--features.sass';
+// styles for modal form for each pages
+import './sass/modal.sass';
 // slick slider imports
 // import 'slick-carousel';
 // import './scss/slick.scss';
@@ -38,15 +38,9 @@ import './css/humburger.css';
     window.onload = () => {
         setImg();
         setBg();
-
-        // heightSectionToEndScreen(document.querySelector('.wrap-main-content'), document.querySelector('.wrap-logo-menu'));
-        // heightSectionToEndScreen(document.querySelector('.contacts'), document.querySelector('.white-header'));
-        // heightSectionToEndScreen(document.querySelector('.main_header--mobile_menu'), document.querySelector('.main_header--wrp_logo_desktop'));
-        // setImg();
-        // setBg();
-        // openMobileMenuOnMainPage();
-        // openMobileMenu();
-        // showAndCloseModal();
+        setClassRotate(document.querySelector('.main'), 'main-rotate');
+        openMobileMenuOnMainPage();
+        showAndCloseModal();
         // setHeightOnResize();
         // startPageSlider();
         // setSlideBg();
@@ -78,34 +72,113 @@ import './css/humburger.css';
         }   
     }
 
-    function openMobileMenuOnMainPageNEW() {
-        let humburger = document.querySelector('.main_header--humburger');
-        let wrpMobileMenu = document.querySelector('.main_header--mobile_menu');
+    function setClassRotate(elem, className) {
+        if (!elem) {
+            return;
+        }
+
+        let screenHeight = document.documentElement.clientHeight;
+        let screenWidth = document.documentElement.clientWidth;
+
+        if (screenHeight < 500) {
+            elem.classList.add(className);
+        }
+
+        window.onresize = () => {
+            let screenHeight = document.documentElement.clientHeight;
+            let mobileMenu = document.querySelector('.main_header--mobile_menu');
     
-        if (humburger !== null && wrpMobileMenu !== null) {
-            humburger.onclick = () => {
-                if (wrpMobileMenu.classList.contains('active-mobile-menu')) {
-                    wrpMobileMenu.style.height = '0px';
-                    wrpMobileMenu.classList.remove('active-mobile-menu');
-                } else {
-                    let header = document.querySelector('.main_header--wrp_logo_desktop');
-                    let headerHeith = window.getComputedStyle(header).height;
-                    let clientHeight = document.documentElement.clientHeight;
-    
-                    headerHeith = Number(headerHeith.substring(0, headerHeith.length - 2));
-                    wrpMobileMenu.style.height = `${clientHeight - headerHeith}px`;
-                    wrpMobileMenu.classList.add('active-mobile-menu');
+            if (screenHeight < 500) {
+                elem.classList.add(className);
+                if (mobileMenu.classList.contains('active_mobile_menu')) {
+                    mobileMenu.style.height = `380px`;
                 }
+
+            } else if (screenHeight > 500 && screenWidth > 1023) {
+                if (mobileMenu.classList.contains('active_mobile_menu')) {
+                    mobileMenu.style.height = `0px`;
+                    mobileMenu.classList.remove('active_mobile_menu');
+                }
+            } else {
+                elem.classList.remove(className);
+                if (mobileMenu.classList.contains('active_mobile_menu')) {
+                    let header = document.querySelector('.main_header--wrp_logo_desktop');
+                    let headerHeigth = window.getComputedStyle(header).height;
+
+                    headerHeigth = Number(headerHeigth.substring(0, headerHeigth.length - 2));
+                    mobileMenu.style.height = `${screenHeight - headerHeigth -40}px`;
+                }
+            }
+            
+        }
+    }
+
+    function openMobileMenuOnMainPage() {
+        let humburger = document.querySelector('.main_header--humburger');
+        let mobileMenu = document.querySelector('.main_header--mobile_menu');
+        let content = document.querySelector('.main--wrp_content');
+
+        if (humburger !== null && mobileMenu !== null) {
+            humburger.onclick = () => {
+                setHeightMobileMenu();
+            }
+        }
+
+        function setHeightMobileMenu() {
+            if (mobileMenu.classList.contains('active_mobile_menu')) {
+                mobileMenu.style.height = '0px';
+                mobileMenu.classList.remove('active_mobile_menu');
+                setTimeout(() => {
+                    content.classList.remove('main--wrp_content-hidden');
+                }, 400);
+            } else {
+                let header = document.querySelector('.main_header--wrp_logo_desktop');
+                let headerHeigth = window.getComputedStyle(header).height;
+                let section = document.querySelector('.main');
+                let sectionHeigth = window.getComputedStyle(section).height;
+                
+                headerHeigth = Number(headerHeigth.substring(0, headerHeigth.length - 2));
+                sectionHeigth = Number(sectionHeigth.substring(0, sectionHeigth.length - 2));
+
+                mobileMenu.style.height = `${sectionHeigth - headerHeigth - 40}px`;
+                mobileMenu.classList.add('active_mobile_menu');
+                content.classList.add('main--wrp_content-hidden');                
             }
         }
     }
 
-}());
-
-
-// window.onload = () => {
+    function showAndCloseModal() {
+        const btn = document.querySelectorAll('.show_modal');
+        const closeModal = document.querySelector('.modal_form--close-btn');
+        const sections = document.querySelectorAll('section');
+        const overlay = document.querySelector('.overlay');
+        const modalForm = document.querySelector('.modal_form');
     
-// };
+        if (btn !== null) {
+            for (const button of btn) {
+                button.onclick = () => {
+                    for (const section of sections) {
+                        section.classList.add('have_blur');
+                    }
+            
+                    overlay.classList.add('show_block');
+                    modalForm.classList.add('show_block');
+                }
+            }
+        }
+    
+        if (closeModal !== null) {
+            closeModal.onclick = () => {
+                for (const section of sections) {
+                    section.classList.remove('have_blur');
+                }
+        
+                overlay.classList.remove('show_block');
+                modalForm.classList.remove('show_block');
+            }
+        }
+    }
+}());
 
 // $('#modalForm').submit(function() {
 //     if (document.modalForm.phone.value == '' ) {
@@ -300,38 +373,7 @@ import './css/humburger.css';
 //     }
 // }
 
-// function showAndCloseModal() {
-//     const btn = document.querySelectorAll('.show-modal');
-//     const closeModal = document.querySelector('.modal_form--close-btn');
-//     const sections = document.querySelectorAll('section');
-//     const overlay = document.querySelector('.overlay');
-//     const modalForm = document.querySelector('.modal_form');
-//     // deleteBlureModal();
 
-//     if (btn !== null) {
-//         for (const button of btn) {
-//             button.onclick = () => {
-//                 for (const section of sections) {
-//                     section.classList.add('have-blur');
-//                 }
-        
-//                 overlay.classList.add('show-block');
-//                 modalForm.classList.add('show-block');
-//             }
-//         }
-//     }
-
-//     if (closeModal !== null) {
-//         closeModal.onclick = () => {
-//             for (const section of sections) {
-//                 section.classList.remove('have-blur');
-//             }
-    
-//             overlay.classList.remove('show-block');
-//             modalForm.classList.remove('show-block');
-//         }
-//     }
-// }
 
 // function deleteBlureModal() {
 //     // let button = document.querySelector('.modal_form--btn');
