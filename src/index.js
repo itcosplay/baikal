@@ -5,6 +5,7 @@ import './sass/default.sass';
 import './sass/mp--header.sass';
 import './sass/mp--main.sass';
 import './sass/mp--features.sass';
+import './sass/mp--choose_format.sass';
 // import './sass/mp--features-mob.sass';
 // import './sass/mp--choose_format.sass';
 // import './sass/mp--travel_with_us.sass';
