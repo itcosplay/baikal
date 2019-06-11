@@ -1,10 +1,11 @@
 @import _variables
 
 .features
-    margin-top: 3.125rem // 50px
+    // margin-top: 3.125rem // 50px
 
 .feature_item
     align-items: center
+    // background-color: lightgray
     display: flex
     float: left
     justify-content: space-between
@@ -15,6 +16,9 @@
         flex-direction: row-reverse
         float: right
     &--img
+        background-position: center center
+        background-repeat: no-repeat
+        background-size: cover
         height: 22.5em // 352px
         width: 35.875em // 574px
     &--wrp_text
@@ -25,38 +29,90 @@
         max-width: 26em // 390px
         width: 100%
     &--title
-        // color: $specify-header-text-color
         font: 800 1.5em Montserrat-ExtraBold // 24px
         line-height: 1.41
         text-transform: uppercase
         width: 100%
     &--sub_title
-        // color: $specify-text-color
         font: 500 0.9375em Montserrat-Medium // 15px
         line-height: 1.76
         margin-top: 1.87em // 28px
         max-width: 26em // 390px
         width: 100%
 
-.feature_mobile_item
-    display: none
-    flex-direction: column
-    padding-top: 2em //80px
-    width: 100%
-    &--title
-        // color: $specify-header-text-color
-        font: 800 1.5em Montserrat-ExtraBold // 24px
-        line-height: 1.41
-        text-transform: uppercase
-        width: 100%
-    &--img
-        margin-top: 1em
-        width: 75%
-    &--sub_title
-        // color: $specify-text-color
-        font: 500 0.9375em Montserrat-Medium // 15px
-        line-height: 1.76
-        margin-top: 1em // 28px
-        width: 100%
+@media (max-width: 1279px) // to 1024
+    .feature_item
+        max-width: 100%
+        &--img
+            width: 50%
 
-// @media (max-width: 1279px) // to 1024
+@media (max-width: 1023px) // to 768
+    .features
+        &--container
+            padding: 0 .5rem
+
+    .feature_item
+        flex-direction: column-reverse
+        flex-wrap: wrap
+        justify-content: flex-start
+        margin-top: 3rem
+        padding-top: 0
+        position: relative
+        &--img
+            min-width: 100%
+            width: 100%
+        &--wrp_text
+            max-width: 100%
+        &--title
+            color: #373737
+            line-height: 1
+            text-align: left
+            max-width: 100%
+        &--sub_title
+            bottom: 50%
+            color: white
+            font-size: 1.2rem
+            line-height: 1.3
+            margin-top: .5rem
+            max-width: 60%
+            padding: .5rem
+            position: absolute
+            right: 0
+            text-align: right
+            transform: translateY(50%)
+        &:nth-child(2)
+            flex-direction: column-reverse
+            flex-wrap: wrap
+            justify-content: flex-start
+        &:nth-child(3)
+            .feature_item--title
+                top: -3rem
+
+@media (max-width: 574px) // to 414px
+    .features
+        &--container
+            padding: 0 .25rem
+
+    .feature_item
+        margin-top: 1.5rem
+        &--img
+            height: 18rem
+        &--title
+            font-size: 1rem
+            margin-bottom: .25rem
+        &--sub_title
+            bottom: .5rem
+            font-size: 1rem
+            line-height: 1
+            max-width: 70%
+            transform: translateY(0)
+
+@media (max-width: 413px) // to 375
+    .feature_item
+        &--sub_title
+            font-size: 0.875rem
+            max-width: 100%
+            text-align: justify
+            padding: 0 .2rem
+
+        

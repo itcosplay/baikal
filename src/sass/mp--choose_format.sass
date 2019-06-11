@@ -17,17 +17,11 @@
         grid-column-gap: 1.25rem //20
         grid-row-gap: 1.25rem //20
         grid-template-columns: 1fr 1fr 1fr
-        // grid-template-rows: 1fr
-        
         margin-top: 5.125rem //82
         width: 100%
 
 .choose_item
     box-shadow: 0px 4px 30px rgba(0, 0, 0, .08)
-    // display: flex
-    // flex-direction: column
-    // height: 31.1875rem //499
-    // justify-content: space-between
     width: 100%        
     &--img
         background-position: center center
@@ -69,6 +63,7 @@
 
 @media (max-width: 1279px) // to 1024
     .choose
+        margin-top: 2rem
         &--title
             width: 100%
         &--wrp_items
@@ -80,6 +75,7 @@
         display: flex
         height: 100%
         &--img
+            
             min-width: 23.375rem //374
             width: 23.375rem
         &--wrp_text_link
@@ -89,36 +85,85 @@
         &--link
             margin-bottom: 1rem
 
-@media (max-width: 767px) // to 575px
+@media (max-width: 1023px) // to 768
     .choose
+        &--container
+            padding: 0 .5rem
+
+@media (max-width: 767px) // to 575px
+    .choose_item
+        &--img
+            height: 10rem
+            min-width: 50%
+            width: 50%
+        &--wrp_text_link
+        &--title
+            padding: 0 0 0 1rem
+        &--sub_title
+            padding: 0 0 0 1rem
+
+@media (max-width: 574px) // to 414px
+    .choose
+        &--container
+            padding: 0 .25rem
+        &--title
+            font-size: 1rem
         &--wrp_items
             margin-top: 1rem
-        
+
     .choose_item
-        display: flex
-        flex-direction: column
         &--img
-            height: 15rem
+        &--wrp_text_link
+        &--title
+            font-size: 0.875rem
+            line-height: 1
+            margin-top: 0
+        &--sub_title
+            font-size: 0.75rem
+        &--link
+            font-size: 0.875rem
+            margin-bottom: 0
+            padding: 0 0 0 1rem
+
+@media (max-width: 413px) // to 375
+    .choose_item
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, .08)
+        display: block
+        width: 100%        
+        &--img
+            background-position: center center
+            background-repeat: no-repeat
+            background-size: cover
+            height: 14rem // 224
             width: 100%
         &--wrp_text_link
-            height: 10rem
+            display: flex
+            flex-direction: column
+            height: 17rem
+            justify-content: space-between
         &--title
-            padding: 0
+            color: #373737
+            font: bold 1rem Montserrat-Bold
+            margin-top: 3.25rem //52
+            padding: 0 1.5rem
+            text-transform: uppercase
+            width: 100%
         &--sub_title
-            padding: 0
+            font: 500 0.875rem Montserrat-Medium //14
+            line-height: 1.64
+            margin-top: 1rem
+            padding: 0 1.5rem
+            width: 100%
         &--link
-            padding: 0
-
-// @media (max-width: 574px) // to 414px
-//     .choose
-//         &--wrp_items
-//             margin-top: .5rem
-
-//     .choose_item
-//         &--img
-//             height: 12rem
-
-// @media (max-width: 413px) // to 375
-//     .choose_item
-//         &--img
-//             height: 10rem
+            align-items: center
+            color: #248CEC
+            display: flex
+            font: 500 1rem Montserrat-Medium
+            height: 1rem
+            margin-bottom: 3.1875rem //51
+            padding: 0 1.5rem
+            text-decoration: none
+            width: 100%  
+            svg
+                margin-left: 1.3125rem //21
+                margin-top: 2.5px    
