@@ -6,15 +6,13 @@ import './sass/mp--header.sass';
 import './sass/mp--main.sass';
 import './sass/mp--features.sass';
 import './sass/mp--choose_format.sass';
-// import './sass/mp--features-mob.sass';
-// import './sass/mp--choose_format.sass';
 import './sass/mp--travel_with_us.sass';
-// import './sass/mp--about_us.sass';
-// styles white-header for pages with white bg
-// import './sass/white-header.sass';
+import './sass/mp--about_us.sass';
+import './sass/footer.sass';
+
 import './css/humburger.css';
-// styles for footer for each pages
-// import './sass/footer.sass';
+
+
 
 // styles for ecological and scientific tours pages
 // import './sass/tours.sass';

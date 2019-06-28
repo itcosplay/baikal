@@ -1,97 +1,73 @@
 @import _variables
 
-.about-us
-    align-items: center
-    display: flex
-    font-size: 1rem
-    justify-content: center
-    padding: 4.75em 0 1.5em 0
+.about_us
+    padding-bottom: 4.5625rem
+    padding-top: 4.5625rem
     width: 100%
-    &__wrap-content
+    &--wrp_content
         align-items: center
         display: flex
-        font-size: 1rem // <--- the main font-size ---
-        justify-content: space-between
-        width: 73em
 
-.about-foundation
+.about_foundation
     display: flex
     flex-direction: column
-    width: 35.5em
-    &__header
-        // color: $about-foundation-header-color
-        font: bold 1.5em 'Montserrat-Bold'
+    width: 35.5rem //568px
+    &--title
+        color: #1B1B1B
+        font: bold 1.5em 'Montserrat-Bold' //24px
         text-align: left
         text-transform: uppercase
-    &__text
-        // color: $specify-text-color
-        font: 500 0.9375em Montserrat-Medium
+    &--sub_title
+        color: #515151
+        font: 500 0.9375em Montserrat-Medium //15px
         line-height: 1.76
         margin-top: 1.25em
-    &__button
+    &--btn
+        @include btn_style
         align-items: center
-        // background-color: $button-color
-        border: none
-        color: white
         display: flex
-        font-family: 'Montserrat-Bold'
-        font-size: 1.125em
-        height: 3.75em
         justify-content: center
-        margin-top: 1.78em
-        outline: none
+        margin-top: 2rem //32px
         text-decoration: none
-        width: 14.5em
-        &:hover
-            // background-color: $hover-btn
-        &:active
-            // background-color: $button-color
-    &__img
-        height: 20em
-        width: 24.235em
+        width: 16.25rem //260px
 
-@media (max-width: 1279px) // to 1024
-    .about-us
-        &__wrap-content
-            font-size: .8rem // <------------ font-size for media
+.about_us_img
+    margin-left: 4rem //64px
 
-@media (max-width: 1023px) // to 768
-    .about-us
-        padding: 2.75em 0 2.75em 0
-        &__wrap-content
-            font-size: .6rem // <------------ font-size for media
-
-@media (max-width: 767px) // to 414
-    .about-us
-        padding: 2.75em 0 1.75em 0
-        &__wrap-content
-            align-items: center
-            flex-direction: column
-            font-size: 1rem // <------------ font-size for media
+@media (max-width: 767px) // to 575px
+    .about_us
+        padding-bottom: 0
+        padding-top: 2rem
+        &--wrp_content
+            flex-wrap: wrap
             justify-content: center
-            // width: $width-format-item-block
-        .about-foundation
-            align-items: center
-            justify-content: center
-            width: 100%
-            &__text
-                text-align: center
-            &__button
-                font-size: .8em
-            &__img
-                display: none
-    
-@media (max-width: 413px) // to 375
-    .about-us
-        &__wrap-content
-            font-size: .8rem // <------------ font-size for media
+            padding: 0 .5rem
         
-@media (max-width: 374px) // to 360
-    .about-us
-        &__wrap-content
-            font-size: .8rem // <------------ font-size for media
+    .about_foundation
+        align-items: center
+        width: 100%
+        &--title
+            text-align: center
+            width: 100%
+        &--sub_title
+            text-align: justify
+            width: 100%
 
-@media (max-width: 359px) // to 320
-    .about-us
-        &__wrap-content
-            font-size: .7rem // <------------ font-size for media
+    .about_us_img
+        margin: 8rem 5rem
+        
+@media (max-width: 574px) // to 414px
+    .about_us
+        &--wrp_content
+            padding: 0 .25rem
+
+    .about_foundation
+        &--title
+            font-size: 1rem
+        &--btn
+            font-size: .9rem
+            width: 14rem
+        
+    .about_us_img
+        margin: 4rem 2rem
+        width: 100%
