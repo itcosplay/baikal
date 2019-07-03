@@ -1,5 +1,6 @@
-$button-color: #248CEC
-$hover-btn: #42A3FD
+$color_btn: #248CEC
+$color_btn_hover: #42A3FD
+
 $modal-color-bg: #fff
 $modal-header-text-color: #1B1B1B
 $modal-inputs-bg: #F4F4F4
@@ -28,12 +29,12 @@ $mouse-width: 20rem
 $parameter-name-color: #7B7B7B
 
 @mixin primary_btn
-    background-color: $button-color
+    background-color: $color_btn
     border: none
     font: bold 1.125em Montserrat-Bold
     height: 3.33em
     width: 13em
     &:hover
-        background-color: $hover-btn
+        background-color: $color_btn_hover
     &:active
-        background-color: $button-color
+        background-color: $color_btn

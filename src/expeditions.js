@@ -4,12 +4,13 @@ import './sass/fonts.sass';
 import './sass/default.sass';
 // styles of page
 import './css/humburger.css';
+import './sass/pages_header.sass';
 import './sass/footer.sass';
 
 
 (function(){
     window.onload = () => {
-        // setImg();
+        setImg();
         // setBg();
         // setClassRotate(document.querySelector('.main'), 'main-rotate');
         // openMobileMenuOnMainPage();
