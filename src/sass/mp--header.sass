@@ -1,0 +1,82 @@
+@import _variables
+
+.main_header
+    left: 50%
+    padding: 0 3rem 0
+    position: absolute
+    top: 40px
+    transform: translateX(-50%)
+    width: 79rem
+    &--wrp_logo_desktop
+        align-items: center
+        display: flex
+        justify-content: space-between
+        overflow: hidden
+        width: 100%
+    &--logo
+        height: 2.5625em // 41px
+        width: 5.8125em // 93px
+    &--desktop_menu
+        display: flex
+        justify-content: space-between
+        width: 30em
+        a   
+            color: white
+            font-family: 'Montserrat-Bold'
+            font-size: 0.75em
+            font-style: normal
+            text-decoration: none
+            text-transform: uppercase
+    &--humburger
+        align-items: center
+        display: none
+        justify-content: center
+        margin-right: -1.3rem
+    &--mobile_menu
+        display: flex
+        flex-direction: column
+        height: 0
+        justify-content: center
+        line-height: 2.5
+        overflow: hidden
+        text-align: right
+        transition: .5s
+        width: 100%
+        a   
+            color: white
+            font: bold 1.8em Montserrat-ExtraBold
+            text-decoration: none
+            text-transform: uppercase
+
+@media (max-width: 1279px) // to 1024
+    .main_header
+        padding: 0 3rem 0
+        width: 100%
+
+@media (max-width: 1023px) // to 768
+    .main_header
+        padding: 0 2.5rem 0
+        &--desktop_menu
+            display: none
+        &--humburger
+            display: flex 
+        
+@media (max-width: 767px) // to 575px
+    .main_header
+        padding: 0 2rem 0
+
+@media (max-width: 574px) // to 414px
+    .main_header
+        padding: 0 1.5rem 0
+
+@media (max-width: 413px) // to 375
+    .main_header
+        padding: 0 1rem 0
+
+@media (max-width: 374px) // to 360
+    .main_header
+        padding: 0 .75rem 0
+
+@media (max-width: 359px) // to 320
+    .main_header
+        padding: 0 .55rem 0
