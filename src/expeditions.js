@@ -3,15 +3,17 @@ import './sass/reset.sass';
 import './sass/fonts.sass';
 import './sass/default.sass';
 // styles of page
+import './css/humburger.css';
+import './sass/footer.sass';
 
 
 (function(){
     window.onload = () => {
-        setImg();
-        setBg();
-        setClassRotate(document.querySelector('.main'), 'main-rotate');
-        openMobileMenuOnMainPage();
-        showAndCloseModal();
+        // setImg();
+        // setBg();
+        // setClassRotate(document.querySelector('.main'), 'main-rotate');
+        // openMobileMenuOnMainPage();
+        // showAndCloseModal();
         // setHeightOnResize();
         // startPageSlider();
         // setSlideBg();
