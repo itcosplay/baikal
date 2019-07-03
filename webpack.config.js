@@ -74,68 +74,12 @@ module.exports = {
 
     plugins: [
         new MiniCssExtractPlugin({
-            filename: './style.bundle.css'
-            // filename: './style.bundle.css'
+            filename: './style.expedition.css'
         }),
         new HtmlWebpackPlugin({
             hash: false,
-            template: './src/index.html',
-            filename: './index.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: false,
-            template: './src/ekspedecii.html',
-            filename: './ekspedecii.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: false,
-            template: './src/eko-tours.html',
-            filename: './eko-tours.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: false,
-            template: './src/location.html',
-            filename: './location.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: false,
-            template: './src/events.html',
-            filename: './events.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: false,
-            template: './src/contacts.html',
-            filename: './contacts.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: false,
-            template: './src/oleniy-fest.html',
-            filename: './oleniy-fest.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: false,
-            template: './src/ohotniki-za-mechtoj.html',
-            filename: './ohotniki-za-mechtoj.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: false,
-            template: './src/medvezhi-zori.html',
-            filename: './medvezhi-zori.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: false,
-            template: './src/sibirskie-orhidei.html',
-            filename: './sibirskie-orhidei.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: false,
-            template: './src/ornitologicheskie-nablyudeniya.html',
-            filename: './ornitologicheskie-nablyudeniya.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: false,
-            template: './src/index_2.html',
-            filename: './index_2.html'
+            template: './src/expedition.html',
+            filename: './expedition.html'
         }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin([

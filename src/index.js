@@ -2,101 +2,73 @@
 import './sass/reset.sass';
 import './sass/fonts.sass';
 import './sass/default.sass';
-// styles for main page
-import './sass/mp--main.sass';
-import './sass/mp--features-desk.sass';
-import './sass/mp--features-mob.sass';
-import './sass/mp--choose_format.sass';
-import './sass/mp--travel_with_us.sass';
-import './sass/mp--about_us.sass';
-// styles white-header for pages with white bg
-import './sass/white-header.sass';
-import './css/humburger.css';
-// styles for footer for each pages
-import './sass/footer.sass';
-// styles for modal form for each pages
-import './sass/modals.sass';
-// styles for ecological and scientific tours pages
-import './sass/tours.sass';
-// styles for events page
-import './sass/events.sass';
-// styles for contacts page
-import './sass/contacts.sass';
-// styles for description tour's page
-import './sass/descr-tour.sass';
-// styles for under development's page
-import './sass/dev.sass';
-// other styles
-import './sass/mp_2--main.sass';
-import './sass/mp_2--features.sass';
-// slick slider imports
-import 'slick-carousel';
-import './scss/slick.scss';
+// styles of page
+
 
 window.onload = () => {
-    heightSectionToEndScreen(document.querySelector('.wrap-main-content'), document.querySelector('.wrap-logo-menu'));
-    heightSectionToEndScreen(document.querySelector('.contacts'), document.querySelector('.white-header'));
-    // heightSectionToEndScreen(document.querySelector('.main_header--mobile_menu'), document.querySelector('.main_header--wrp_logo_desktop'));
-    setImg();
-    setBg();
-    openMobileMenuOnMainPage();
-    openMobileMenu();
-    showAndCloseModal();
-    setHeightOnResize();
-    startPageSlider();
-    setSlideBg();
-    showHideText();
-    activeModalSlider();
-    openMobileMenuOnMainPageNEW();
+    // heightSectionToEndScreen(document.querySelector('.wrap-main-content'), document.querySelector('.wrap-logo-menu'));
+    // heightSectionToEndScreen(document.querySelector('.contacts'), document.querySelector('.white-header'));
+    // // heightSectionToEndScreen(document.querySelector('.main_header--mobile_menu'), document.querySelector('.main_header--wrp_logo_desktop'));
+    // setImg();
+    // setBg();
+    // openMobileMenuOnMainPage();
+    // openMobileMenu();
+    // showAndCloseModal();
+    // setHeightOnResize();
+    // startPageSlider();
+    // setSlideBg();
+    // showHideText();
+    // activeModalSlider();
+    // openMobileMenuOnMainPageNEW();
     // deleteBlureModal();
 };
 
-$('#modalForm').submit(function() {
-    if (document.modalForm.phone.value == '' ) {
-        return false;
-    }
+// $('#modalForm').submit(function() {
+//     if (document.modalForm.phone.value == '' ) {
+//         return false;
+//     }
 
-    if (document.modalForm.name.value.length > 30) {
-        return false;
-    }
+//     if (document.modalForm.name.value.length > 30) {
+//         return false;
+//     }
 
-    if (document.modalForm.email) {
-        if (document.modalForm.email.value.length > 30) {
-            return false;
-        }
-    }
+//     if (document.modalForm.email) {
+//         if (document.modalForm.email.value.length > 30) {
+//             return false;
+//         }
+//     }
 
-    $.ajax({
-        type: "POST",
-        url: "mailModal.php",
-        data: $(this).serialize()
-    }).done(function() {
+//     $.ajax({
+//         type: "POST",
+//         url: "mailModal.php",
+//         data: $(this).serialize()
+//     }).done(function() {
         
-        $('#modalForm').trigger('reset');
+//         $('#modalForm').trigger('reset');
 
-        // const sections = document.querySelectorAll('section');
+//         // const sections = document.querySelectorAll('section');
         
-        // for (const section of sections) {
-        //     section.classList.remove('have-blur');
-        // }
+//         // for (const section of sections) {
+//         //     section.classList.remove('have-blur');
+//         // }
 
-        $('.thank_window').fadeIn();
-        setTimeout(() => {
-            $('.thank_window').fadeOut();
-            deleteBlureModal();
-            const overlay = document.querySelector('.overlay');
-            const modalForm = document.querySelector('.modal_form');
-            overlay.classList.remove('show-block');
-            modalForm.classList.remove('show-block');
-        }, 3000);
+//         $('.thank_window').fadeIn();
+//         setTimeout(() => {
+//             $('.thank_window').fadeOut();
+//             deleteBlureModal();
+//             const overlay = document.querySelector('.overlay');
+//             const modalForm = document.querySelector('.modal_form');
+//             overlay.classList.remove('show-block');
+//             modalForm.classList.remove('show-block');
+//         }, 3000);
         
-        console.log('message sended'); 
-    });
+//         console.log('message sended'); 
+//     });
     
-    return false;
-});
+//     return false;
+// });
 
-Inputmask({ mask: '+7 (999) 999-9999'}).mask(document.querySelectorAll('#modal-form__mask-phone'));
+// Inputmask({ mask: '+7 (999) 999-9999'}).mask(document.querySelectorAll('#modal-form__mask-phone'));
 
 function activeModalSlider() {
     let images = document.querySelectorAll('.show_modal_slider');
