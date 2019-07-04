@@ -46,47 +46,6 @@ import './sass/footer.sass';
         }   
     }
 
-    function setClassRotate(elem, className) {
-        if (!elem) {
-            return;
-        }
-
-        let screenHeight = document.documentElement.clientHeight;
-        let screenWidth = document.documentElement.clientWidth;
-
-        if (screenHeight < 500) {
-            elem.classList.add(className);
-        }
-
-        window.onresize = () => {
-            let screenHeight = document.documentElement.clientHeight;
-            let mobileMenu = document.querySelector('.main_header--mobile_menu');
-    
-            if (screenHeight < 500) {
-                elem.classList.add(className);
-                if (mobileMenu.classList.contains('active_mobile_menu')) {
-                    mobileMenu.style.height = `380px`;
-                }
-
-            } else if (screenHeight > 500 && screenWidth > 1023) {
-                if (mobileMenu.classList.contains('active_mobile_menu')) {
-                    mobileMenu.style.height = `0px`;
-                    mobileMenu.classList.remove('active_mobile_menu');
-                }
-            } else {
-                elem.classList.remove(className);
-                if (mobileMenu.classList.contains('active_mobile_menu')) {
-                    let header = document.querySelector('.main_header--wrp_logo_desktop');
-                    let headerHeigth = window.getComputedStyle(header).height;
-
-                    headerHeigth = Number(headerHeigth.substring(0, headerHeigth.length - 2));
-                    mobileMenu.style.height = `${screenHeight - headerHeigth -40}px`;
-                }
-            }
-            
-        }
-    }
-
     function openMobileMenuOnPages() {
         let humburger = document.querySelector('.pages_header--humburger');
         let mobileMenu = document.querySelector('.pages_header--mobile_menu');
@@ -97,9 +56,9 @@ import './sass/footer.sass';
                 mobileMenu.classList.remove('active_mobile_menu');
             } else {
                 let clientHeight = document.documentElement.clientHeight;
-                console.log(clientHeight);
+
                 if (clientHeight < 450) {
-                    mobileMenu.style.height = '500px';
+                    mobileMenu.style.height = '300px';
                 } else {
                     mobileMenu.style.height = `${clientHeight - 80}px`;
                 }
@@ -108,29 +67,21 @@ import './sass/footer.sass';
             }
         }
 
-        function setHeightMobileMenu() {
+        window.onresize = () => {
+            let ham = document.querySelector('.ham8');
+
             if (mobileMenu.classList.contains('active_mobile_menu')) {
                 mobileMenu.style.height = '0px';
-                
-                // setTimeout(() => {
-                //     content.classList.remove('main--wrp_content-hidden');
-                // }, 400);
-            } else {
-                let header = document.querySelector('.pages_header--wrp_logo_desktop');
-                let headerHeigth = window.getComputedStyle(header).height;
-                // let section = document.querySelector('.main');
-                // let sectionHeigth = window.getComputedStyle(section).height;
-                
-                headerHeigth = Number(headerHeigth.substring(0, headerHeigth.length - 2));
-                // sectionHeigth = Number(sectionHeigth.substring(0, sectionHeigth.length - 2));
-
-                mobileMenu.style.height = `100vh`;
-                
-                // content.classList.add('main--wrp_content-hidden');                
+                mobileMenu.classList.remove('active_mobile_menu');
+                ham.classList.remove('active');
             }
         }
     }
 
+    
+
+
+    
     function showAndCloseModal() {
         const btn = document.querySelectorAll('.show_modal');
         const closeModal = document.querySelector('.modal_form--close-btn');
