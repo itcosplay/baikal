@@ -5,23 +5,15 @@ import './sass/default.sass';
 // styles of page
 import './css/humburger.css';
 import './sass/pages_header.sass';
+import './sass/tours.sass';
 import './sass/footer.sass';
 
 
 (function(){
     window.onload = () => {
         setImg();
-        // setBg();
-        // setClassRotate(document.querySelector('.main'), 'main-rotate');
+        setBg();
         openMobileMenuOnPages();
-        // showAndCloseModal();
-        // setHeightOnResize();
-        // startPageSlider();
-        // setSlideBg();
-        // showHideText();
-        // activeModalSlider();
-        // openMobileMenuOnMainPageNEW();
-        // deleteBlureModal();
     }
 
     function setImg() {
@@ -74,42 +66,6 @@ import './sass/footer.sass';
                 mobileMenu.style.height = '0px';
                 mobileMenu.classList.remove('active_mobile_menu');
                 ham.classList.remove('active');
-            }
-        }
-    }
-
-    
-
-
-    
-    function showAndCloseModal() {
-        const btn = document.querySelectorAll('.show_modal');
-        const closeModal = document.querySelector('.modal_form--close-btn');
-        const sections = document.querySelectorAll('section');
-        const overlay = document.querySelector('.overlay');
-        const modalForm = document.querySelector('.modal_form');
-    
-        if (btn !== null) {
-            for (const button of btn) {
-                button.onclick = () => {
-                    for (const section of sections) {
-                        section.classList.add('have_blur');
-                    }
-            
-                    overlay.classList.add('show_block');
-                    modalForm.classList.add('show_block');
-                }
-            }
-        }
-    
-        if (closeModal !== null) {
-            closeModal.onclick = () => {
-                for (const section of sections) {
-                    section.classList.remove('have_blur');
-                }
-        
-                overlay.classList.remove('show_block');
-                modalForm.classList.remove('show_block');
             }
         }
     }
