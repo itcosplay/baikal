@@ -18,6 +18,8 @@
         display: flex
         justify-content: space-between
         width: 30em
+        li
+            position: relative
         a   
             color: #373737
             font-family: 'Montserrat-Bold'
@@ -45,6 +47,17 @@
             font: bold 1.8em Montserrat-ExtraBold
             text-decoration: none
             text-transform: uppercase
+
+.li-underline
+    &:after
+        border: 2px solid #248CEC
+        bottom: -52px
+        content: ''
+        display: block
+        left: 50%
+        position: absolute
+        transform: translateX(-50%)
+        width: 2.6em
 
 @media (max-width: 1279px) // to 1024
     .pages_header
