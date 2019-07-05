@@ -2,36 +2,10 @@
 import './sass/reset.sass';
 import './sass/fonts.sass';
 import './sass/default.sass';
-// styles for main page
-import './sass/mp--main.sass';
-import './sass/mp--features-desk.sass';
-import './sass/mp--features-mob.sass';
-import './sass/mp--choose_format.sass';
-import './sass/mp--travel_with_us.sass';
-import './sass/mp--about_us.sass';
-// styles white-header for pages with white bg
-import './sass/white-header.sass';
-import './css/humburger.css';
-// styles for footer for each pages
-import './sass/footer.sass';
-// styles for modal form for each pages
+
 import './sass/modals.sass';
-// styles for ecological and scientific tours pages
-import './sass/tours.sass';
-// styles for events page
-import './sass/events.sass';
-// styles for contacts page
-import './sass/contacts.sass';
-// styles for description tour's page
 import './sass/descr-tour.sass';
-// styles for under development's page
-import './sass/dev.sass';
-// other styles
-import './sass/mp_2--main.sass';
-import './sass/mp_2--features.sass';
-// slick slider imports
-import 'slick-carousel';
-import './scss/slick.scss';
+import './sass/footer.sass';
 
 window.onload = () => {
     heightSectionToEndScreen(document.querySelector('.wrap-main-content'), document.querySelector('.wrap-logo-menu'));
