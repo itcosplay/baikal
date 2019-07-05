@@ -4,6 +4,7 @@ import './sass/fonts.sass';
 import './sass/default.sass';
 
 import './sass/modals.sass';
+import './css/humburger.css';
 import './sass/pages_header.sass';
 import './sass/descr-tour.sass';
 import './sass/footer.sass';
