@@ -15,6 +15,7 @@ import './sass/footer.sass';
         openMobileMenuOnPages();
         showHideText();
         showAndCloseModal();
+        Inputmask({ mask: '+7 (999) 999-9999'}).mask(document.querySelectorAll('#modal-form__mask-phone'));
     }
 
     function setImg() {
@@ -92,7 +93,7 @@ import './sass/footer.sass';
         const sections = document.querySelectorAll('section');
         const overlay = document.querySelector('.overlay');
         const modalForm = document.querySelector('.modal_form');
-        // deleteBlureModal();
+        deleteBlureModal();
     
         if (btn !== null) {
             for (const button of btn) {
@@ -118,20 +119,20 @@ import './sass/footer.sass';
             }
         }
     }
+
+    function deleteBlureModal() {
+        // let button = document.querySelector('.modal_form--btn');
+        
+        // button.onclick = () => {
+            const sections = document.querySelectorAll('section');
+    
+            for (const section of sections) {
+                section.classList.remove('have-blur');
+            }
+        // }
+    }
 }());
 
-// Inputmask({ mask: '+7 (999) 999-9999'}).mask(document.querySelectorAll('#modal-form__mask-phone'));
 
-// function deleteBlureModal() {
-//     // let button = document.querySelector('.modal_form--btn');
-    
-//     // button.onclick = () => {
-//         const sections = document.querySelectorAll('section');
-
-//         for (const section of sections) {
-//             section.classList.remove('have-blur');
-//         }
-//     // }
-// }
 
 
