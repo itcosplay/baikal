@@ -1,4 +1,3 @@
-// defaults styles
 import './sass/reset.sass';
 import './sass/fonts.sass';
 import './sass/default.sass';
