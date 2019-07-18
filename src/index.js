@@ -21,6 +21,51 @@ import './sass/modal.sass';
         Inputmask({ mask: '+7 (999) 999-9999'}).mask(document.querySelectorAll('#modal-form__mask-phone'));
     }
 
+    $('#modalForm').submit(function() {
+        if (document.modalForm.phone.value == '' ) {
+            return false;
+        }
+    
+        if (document.modalForm.name.value.length > 30) {
+            return false;
+        }
+    
+        if (document.modalForm.email) {
+            if (document.modalForm.email.value.length > 30) {
+                return false;
+            }
+        }
+    
+        $.ajax({
+            type: "POST",
+            url: "mailModal.php",
+            data: $(this).serialize()
+        }).done(function() {
+            
+            $('#modalForm').trigger('reset');
+    
+            // const sections = document.querySelectorAll('section');
+            
+            // for (const section of sections) {
+            //     section.classList.remove('have-blur');
+            // }
+    
+            $('.thank_window').fadeIn();
+            setTimeout(() => {
+                $('.thank_window').fadeOut();
+                deleteBlureModal();
+                const overlay = document.querySelector('.overlay');
+                const modalForm = document.querySelector('.modal_form');
+                overlay.classList.remove('show-block');
+                modalForm.classList.remove('show-block');
+            }, 3000);
+            
+            console.log('message sended'); 
+        });
+        
+        return false;
+    });
+
     function setImg() {
         let images = document.getElementsByTagName('img');
 
