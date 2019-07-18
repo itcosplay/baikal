@@ -18,6 +18,7 @@ import './sass/modal.sass';
         setClassRotate(document.querySelector('.main'), 'main-rotate');
         openMobileMenuOnMainPage();
         showAndCloseModal();
+        Inputmask({ mask: '+7 (999) 999-9999'}).mask(document.querySelectorAll('#modal-form__mask-phone'));
     }
 
     function setImg() {
