@@ -75,24 +75,17 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: './style.bundle.css'
-            // filename: './style.bundle.css'
         }),
         new HtmlWebpackPlugin({
             hash: false,
             template: './src/index.html',
             filename: './index.html'
         }),
-        // new HtmlWebpackPlugin({
-        //     hash: false,
-        //     template: './src/ornitologicheskie-nablyudeniya.html',
-        //     filename: './ornitologicheskie-nablyudeniya.html'
-        // }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
             { from: './src/img', to: './img' },
             { from: './src/favicon', to: './favicon' },
             { from: './src/mailModal.php', to: './mailModal.php' },
-            { from: './src/mail.php', to: './mail.php' },
         ]),
         new webpack.ProvidePlugin({
             $: 'jquery',

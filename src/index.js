@@ -95,8 +95,6 @@ import './sass/modal.sass';
         }
     }
 
-
-
     $('#modalForm').submit(function() {
         if (document.modalForm.phone.value == '' ) {
             return false;
