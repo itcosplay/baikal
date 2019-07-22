@@ -43,10 +43,11 @@ import './sass/modal.sass';
     }
 
     function openMobileMenuOnMainPage() {
-        let humburger  = document.querySelector('.main_header--humburger');
-        let hum        = document.querySelector('.ham');
-        let mobileMenu = document.querySelector('.main_header--mobile_menu');
-        let content    = document.querySelector('.main--wrp_content');
+        let humburger    = document.querySelector('.main_header--humburger');
+        let hum          = document.querySelector('.ham');
+        let mobileMenu   = document.querySelector('.main_header--mobile_menu');
+        let content      = document.querySelector('.main--wrp_content');
+        let clientWidth = document.documentElement.clientWidth;
 
         if (humburger !== null && mobileMenu !== null) {
             humburger.onclick = () => {
@@ -54,8 +55,15 @@ import './sass/modal.sass';
             }
 
             window.onresize = () => {
-                hum.classList.remove('active');
-                resizeMobileMenu();
+                let newClientWidth = document.documentElement.clientWidth;
+
+                if (clientWidth == newClientWidth) {
+                    // console.log('width did not change');
+                    return;   
+                } else {
+                    hum.classList.remove('active');
+                    resizeMobileMenu();
+                }
             }
         }
 
@@ -141,11 +149,11 @@ import './sass/modal.sass';
     });
 
     function showAndCloseModal() {
-        const btn = document.querySelectorAll('.show_modal');
+        const btn        = document.querySelectorAll('.show_modal');
         const closeModal = document.querySelector('.modal_form--close-btn');
-        const sections = document.querySelectorAll('section');
-        const overlay = document.querySelector('.overlay');
-        const modalForm = document.querySelector('.modal_form');
+        const sections   = document.querySelectorAll('section');
+        const overlay    = document.querySelector('.overlay');
+        const modalForm  = document.querySelector('.modal_form');
     
         if (btn !== null) {
             for (const button of btn) {
@@ -171,46 +179,4 @@ import './sass/modal.sass';
             }
         }
     }
-
-
-        // function setClassRotate(elem, className) {
-    //     if (!elem) {
-    //         return;
-    //     }
-
-    //     let screenHeight = document.documentElement.clientHeight;
-    //     let screenWidth = document.documentElement.clientWidth;
-
-    //     if (screenHeight < 500) {
-    //         elem.classList.add(className);
-    //     }
-
-    //     window.onresize = () => {
-    //         let screenHeight = document.documentElement.clientHeight;
-    //         let mobileMenu = document.querySelector('.main_header--mobile_menu');
-    
-    //         if (screenHeight < 500) {
-    //             elem.classList.add(className);
-    //             if (mobileMenu.classList.contains('active_mobile_menu')) {
-    //                 mobileMenu.style.height = `380px`;
-    //             }
-
-    //         } else if (screenHeight > 500 && screenWidth > 1023) {
-    //             if (mobileMenu.classList.contains('active_mobile_menu')) {
-    //                 mobileMenu.style.height = `0px`;
-    //                 mobileMenu.classList.remove('active_mobile_menu');
-    //             }
-    //         } else {
-    //             elem.classList.remove(className);
-    //             if (mobileMenu.classList.contains('active_mobile_menu')) {
-    //                 let header = document.querySelector('.main_header--wrp_logo_desktop');
-    //                 let headerHeigth = window.getComputedStyle(header).height;
-
-    //                 headerHeigth = Number(headerHeigth.substring(0, headerHeigth.length - 2));
-    //                 mobileMenu.style.height = `${screenHeight - headerHeigth -40}px`;
-    //             }
-    //         }
-            
-    //     }
-    // }
 }());
