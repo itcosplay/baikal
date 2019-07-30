@@ -44,63 +44,74 @@ import './sass/modal.sass';
 
     function openMobileMenuOnMainPage() {
         let humburger    = document.querySelector('.main_header--humburger');
-        let hum          = document.querySelector('.ham');
+        
         let mobileMenu   = document.querySelector('.main_header--mobile_menu');
-        let content      = document.querySelector('.main--wrp_content');
-        let clientWidth = document.documentElement.clientWidth;
+        
+        // let content      = document.querySelector('.main--wrp_content');
 
-        if (humburger !== null && mobileMenu !== null) {
-            humburger.onclick = () => {
-                setHeightMobileMenu();
-            }
+        humburger.onclick = () => {
+            if (mobileMenu.classList.contains('active_mobile_menu')) {
+                closeMobileMenu();
+                // setTimeout(() => {
+                //     content.classList.remove('main--wrp_content-hidden');
+                // }, 400);
+            } else openMobileMenu();
+        }
 
-            window.onresize = () => {
-                let newClientWidth = document.documentElement.clientWidth;
-
-                if (clientWidth == newClientWidth) {
-                    // console.log('width did not change');
-                    return;   
-                } else {
-                    hum.classList.remove('active');
-                    resizeMobileMenu();
+        window.onresize = () => {
+            if (mobileMenu.classList.contains('active_mobile_menu')) {
+                if (document.documentElement.clientWidth > 1023) {
+                    closeMobileMenu();
+                    return;
                 }
+                setTimeout(() => {
+                    openMobileMenu();
+                }, 500);
+            } else {
+                return;
             }
         }
 
-        function setHeightMobileMenu() {
-            if (mobileMenu.classList.contains('active_mobile_menu')) {
-                mobileMenu.style.height = '0px';
-                mobileMenu.classList.remove('active_mobile_menu');
+        function closeMobileMenu() {
+            let hum = document.querySelector('.ham');
 
-                setTimeout(() => {
-                    content.classList.remove('main--wrp_content-hidden');
-                }, 400);
-            } else {
+            mobileMenu.style.height = '0px';
+            mobileMenu.classList.remove('active_mobile_menu');
+            hum.classList.remove('active');
+        }
+
+        function openMobileMenu() {
                 let header        = document.querySelector('.main_header--wrp_logo_desktop');
                 let headerHeigth  = window.getComputedStyle(header).height;
 
-                let section       = document.querySelector('.main');
-                let sectionHeigth = window.getComputedStyle(section).height;
-                
                 headerHeigth = Number(headerHeigth.substring(0, headerHeigth.length - 2));
-                sectionHeigth = Number(sectionHeigth.substring(0, sectionHeigth.length - 2));
 
-                mobileMenu.style.height = `${sectionHeigth - headerHeigth - 40}px`;
-                mobileMenu.classList.add('active_mobile_menu');
-                content.classList.add('main--wrp_content-hidden');                
+                let mainSection   = document.querySelector('.main');
+                let sectionHeigth = window.getComputedStyle(mainSection).height;
+                sectionHeigth     = Number(sectionHeigth.substring(0, sectionHeigth.length - 2));
+
+                mobileMenu.style.height = `${sectionHeigth - headerHeigth}px`;
+
+                if (mobileMenu.classList.contains('active_mobile_menu')) {
+                    return;
+                } else {
+                    mobileMenu.classList.add('active_mobile_menu');
+                }
+                
+                // content.classList.add('main--wrp_content-hidden');                
             }
-        }
+        
 
-        function resizeMobileMenu() {
-            if (mobileMenu.classList.contains('active_mobile_menu')) {
-                mobileMenu.style.height = '0px';
-                mobileMenu.classList.remove('active_mobile_menu');
+        // function resizeMobileMenu() {
+        //     if (mobileMenu.classList.contains('active_mobile_menu')) {
+        //         mobileMenu.style.height = '0px';
+        //         mobileMenu.classList.remove('active_mobile_menu');
 
-                setTimeout(() => {
-                    content.classList.remove('main--wrp_content-hidden');
-                }, 400);
-            }
-        }
+        //         setTimeout(() => {
+        //             content.classList.remove('main--wrp_content-hidden');
+        //         }, 400);
+        //     }
+        // }
     }
 
     $('#modalForm').submit(function() {
