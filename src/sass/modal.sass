@@ -19,12 +19,10 @@
     height: 38.625em
     left: 50%
     padding: 5em 3.4375em 3.4375em
-    // opacity: 0
     position: fixed
     top: 50%
     transform: translate(-50%, -50%)
     transition: .5s
-    // visibility: hidden
     width: 38.375em
     z-index: $z_index_modal
     &--header
@@ -75,6 +73,9 @@
     display: block
     opacity: 1
     visibility: visible
+
+.overflowHidden
+    overflow: hidden
 
 @media (max-width: 767px) // to 575px
     .modal_form

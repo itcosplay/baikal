@@ -99,63 +99,79 @@ import './sass/modal.sass';
         }
     }
 
-    // $('#modalForm').submit(function() {
-    //     if (document.modalForm.phone.value == '' ) {
-    //         return false;
-    //     }
+    $('#modalForm').submit(function() {
+        if (document.modalForm.phone.value == '' ) {
+            alert('Введите ваш номер телефона');
+
+            return false;
+        }
     
-    //     if (document.modalForm.name.value.length > 30) {
-    //         return false;
-    //     }
+        if (document.modalForm.name.value.length > 30) {
+
+            return false;
+        }
     
-    //     if (document.modalForm.email) {
-    //         if (document.modalForm.email.value.length > 30) {
-    //             return false;
-    //         }
-    //     }
+        if (document.modalForm.email) {
+            if (document.modalForm.email.value.length > 30) {
+
+                return false;
+            }
+        }
     
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "mailModal.php",
-    //         data: $(this).serialize()
-    //     }).done(function() {
+        $.ajax({
+            type: "POST",
+            url: "mailModal.php",
+            data: $(this).serialize()
+        }).done(function() {
+            console.log('message was sended');
+            $('#modalForm').trigger('reset');
+
+
+            // $('.thank_window').fadeIn();
+            // setTimeout(() => {
+            //     $('.thank_window').fadeOut();
+            //     deleteBlureModal();
+            //     const overlay = document.querySelector('.overlay');
+            //     const modalForm = document.querySelector('.modal_form');
+            //     overlay.classList.remove('show-block');
+            //     modalForm.classList.remove('show-block');
+            // }, 3000);
             
-    //         $('#modalForm').trigger('reset');
-    
-    //         // const sections = document.querySelectorAll('section');
-            
-    //         // for (const section of sections) {
-    //         //     section.classList.remove('have-blur');
-    //         // }
-    
-    //         $('.thank_window').fadeIn();
-    //         setTimeout(() => {
-    //             $('.thank_window').fadeOut();
-    //             deleteBlureModal();
-    //             const overlay = document.querySelector('.overlay');
-    //             const modalForm = document.querySelector('.modal_form');
-    //             overlay.classList.remove('show-block');
-    //             modalForm.classList.remove('show-block');
-    //         }, 3000);
-            
-    //         console.log('message sended'); 
-    //     });
+            console.log('message sended'); 
+        });
         
-    //     return false;
-    // });
+        return false;
+    });
 
     function showAndCloseModal() {
         const btn      = document.querySelector('.show_modal');
         const closeBtn = document.querySelector('.modal_form--close-btn');
         const overlay  = document.querySelector('.overlay');
+        const body     = document.querySelector('body');
+        const sendBtn  = document.querySelector('.modal_form--btn');
 
         btn.onclick = () => {
             overlay.classList.add('show_block');
+            body.classList.add('overflowHidden');
         }
 
         closeBtn.onclick = () => {
             overlay.classList.remove('show_block');
+            body.classList.remove('overflowHidden');
         }
+
+        // sendBtn.submit = () => {
+        //     event.preventDefault();
+        //     console.log('hello');
+        //     if (document.modalForm.phone.value == '' ) {
+        //         console.log('1');
+        //         alert('Введите номер телефона');
+        //         return false;
+        //     }
+
+        //     // overlay.classList.remove('show_block');
+        //     // body.classList.remove('overflowHidden');
+        // }
         // const closeModal = document.querySelector('.modal_form--close-btn');
         // const sections   = document.querySelectorAll('section');
         // const overlay    = document.querySelector('.overlay');
