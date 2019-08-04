@@ -4,7 +4,7 @@
     background-position: center center
     background-size: cover
     height: 100vh
-    min-height: 600px
+    min-height: 500px
     position: relative
     transition: .5s
     width: 100%
@@ -18,7 +18,7 @@
             display: none
     &--title
         color: white
-        font: 800 3em Montserrat-ExtraBold
+        font: 800 3rem Montserrat-ExtraBold //48px
         text-align: center
         text-transform: uppercase
     &--sub_title
@@ -30,9 +30,18 @@
         max-width: 40rem
         width: 100%
     &--btn
-        @include btn_style
-        margin-top: 3rem
+        background-color: #248CEC
+        border: none
+        color: white
+        font: bold 1.125rem 'Montserrat-Bold' //20px
+        height: 3.2em
+        outline: none
+        margin-top: 3em
         width: 13em // 234px
+        &:hover
+            background-color: #42A3FD
+        &:active
+            background-color: #248CEC
 
 @media (max-width: 1279px) // to 1024
     body::-webkit-scrollbar
@@ -52,12 +61,10 @@
         
 @media (max-width: 574px) // to 414px
     .main
-        // &--title
-        //     font-size: 1.2rem
-        // &--sub_title
-        //     font-size: .9rem
-        // &--btn
-        //     font-size: .9rem
+        &--title
+            font-size: 2.3em
+        &--btn
+            font-size: 1em
 
 @media (max-width: 359px) // to 320
     .main
