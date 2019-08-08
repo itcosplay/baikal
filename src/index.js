@@ -99,32 +99,32 @@ import './sass/modal.sass';
         }
     }
 
-    $('#modalForm').submit(function() {
-        if (document.modalForm.phone.value == '' ) {
-            alert('Введите ваш номер телефона');
+    // $('#modalForm').submit(function() {
+    //     if (document.modalForm.phone.value == '' ) {
+    //         alert('Введите ваш номер телефона');
 
-            return false;
-        }
+    //         return false;
+    //     }
     
-        if (document.modalForm.name.value.length > 30) {
+    //     if (document.modalForm.name.value.length > 30) {
 
-            return false;
-        }
+    //         return false;
+    //     }
     
-        if (document.modalForm.email) {
-            if (document.modalForm.email.value.length > 30) {
+    //     if (document.modalForm.email) {
+    //         if (document.modalForm.email.value.length > 30) {
 
-                return false;
-            }
-        }
+    //             return false;
+    //         }
+    //     }
     
-        $.ajax({
-            type: "POST",
-            url: "mailModal.php",
-            data: $(this).serialize()
-        }).done(function() {
-            console.log('message was sended');
-            $('#modalForm').trigger('reset');
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "mailModal.php",
+    //         data: $(this).serialize()
+    //     }).done(function() {
+    //         console.log('message was sended');
+    //         $('#modalForm').trigger('reset');
 
 
             // $('.thank_window').fadeIn();
@@ -137,18 +137,20 @@ import './sass/modal.sass';
             //     modalForm.classList.remove('show-block');
             // }, 3000);
             
-            console.log('message sended'); 
-        });
+            // console.log('message sended'); 
+    //     });
         
-        return false;
-    });
+    //     return false;
+    // });
 
     function showAndCloseModal() {
         const btn      = document.querySelector('.show_modal');
         const closeBtn = document.querySelector('.modal_form--close-btn');
         const overlay  = document.querySelector('.overlay');
         const body     = document.querySelector('body');
-        const sendBtn  = document.querySelector('.modal_form--btn');
+        // const sendBtn  = document.querySelector('.modal_form--btn');
+        const form     = document.modalForm;
+        console.log(form);
 
         btn.onclick = () => {
             overlay.classList.add('show_block');
@@ -158,6 +160,10 @@ import './sass/modal.sass';
         closeBtn.onclick = () => {
             overlay.classList.remove('show_block');
             body.classList.remove('overflowHidden');
+        }
+
+        form.onsubmit = () => {
+            console.log('was submit event');
         }
 
         // sendBtn.submit = () => {
