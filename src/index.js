@@ -7,6 +7,7 @@ import './css/humburger.css';
 import './sass/pages_header.sass';
 import './sass/events.sass';
 import './sass/footer.sass';
+import './sass/modal.sass';
 
 
 (function(){
