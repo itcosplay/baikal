@@ -15,6 +15,7 @@ import './sass/modal.sass';
         setImg();
         setBg();
         openMobileMenuOnPages();
+        showAndCloseModal();
     }
 
     function setImg() {
@@ -69,5 +70,77 @@ import './sass/modal.sass';
                 ham.classList.remove('active');
             }
         }
+    }
+
+    function showAndCloseModal() {
+        const btn      = document.querySelectorAll('.show_modal');
+        const closeBtn = document.querySelector('.modal_form--close-btn');
+        const overlay  = document.querySelector('.overlay');
+        const body     = document.querySelector('body');
+        // const sendBtn  = document.querySelector('.modal_form--btn');
+        const form     = document.modalForm;
+        console.log(form);
+
+        for (const button of btn) {
+            button.onclick = () => {
+                overlay.classList.add('show_block');
+                body.classList.add('overflowHidden');
+            }
+        }
+
+        // btn.onclick = () => {
+        //     overlay.classList.add('show_block');
+        //     body.classList.add('overflowHidden');
+        // }
+
+        closeBtn.onclick = () => {
+            overlay.classList.remove('show_block');
+            body.classList.remove('overflowHidden');
+        }
+
+        form.onsubmit = () => {
+            console.log('was submit event');
+        }
+
+        // sendBtn.submit = () => {
+        //     event.preventDefault();
+        //     console.log('hello');
+        //     if (document.modalForm.phone.value == '' ) {
+        //         console.log('1');
+        //         alert('Введите номер телефона');
+        //         return false;
+        //     }
+
+        //     // overlay.classList.remove('show_block');
+        //     // body.classList.remove('overflowHidden');
+        // }
+        // const closeModal = document.querySelector('.modal_form--close-btn');
+        // const sections   = document.querySelectorAll('section');
+        // const overlay    = document.querySelector('.overlay');
+        // const modalForm  = document.querySelector('.modal_form');
+    
+        // if (btn !== null) {
+        //     for (const button of btn) {
+        //         button.onclick = () => {
+        //             for (const section of sections) {
+        //                 section.classList.add('have_blur');
+        //             }
+            
+        //             overlay.classList.add('show_block');
+        //             modalForm.classList.add('show_block');
+        //         }
+        //     }
+        // }
+    
+        // if (closeModal !== null) {
+        //     closeModal.onclick = () => {
+        //         for (const section of sections) {
+        //             section.classList.remove('have_blur');
+        //         }
+        
+        //         overlay.classList.remove('show_block');
+        //         modalForm.classList.remove('show_block');
+        //     }
+        // }
     }
 }());
