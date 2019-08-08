@@ -1,0 +1,73 @@
+@import _variables
+
+.pages_header
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, .04)
+    left: 50%
+    &--wrp_logo_desktop
+        align-items: center
+        display: flex
+        height: 7.5rem //120px
+        justify-content: space-between
+        overflow: hidden
+        width: 100%
+    &--logo
+        height: 2.5625em // 41px
+        width: 5.8125em // 93px
+    &--desktop_menu
+        align-items: center
+        display: flex
+        justify-content: space-between
+        width: 18rem // 30rem for full menu
+        li
+            position: relative
+        a   
+            color: #373737
+            font-family: 'Montserrat-Bold'
+            font-size: 0.75em
+            font-style: normal
+            text-decoration: none
+            text-transform: uppercase
+    &--humburger
+        align-items: center
+        display: none
+        justify-content: center
+        margin-right: -1.3rem
+    &--mobile_menu
+        display: flex
+        flex-direction: column
+        height: 0
+        justify-content: center
+        line-height: 2.5
+        overflow: hidden
+        text-align: right
+        transition: .5s
+        width: 100%
+        a   
+            color: #373737
+            font: bold 1.8em Montserrat-ExtraBold
+            text-decoration: none
+            text-transform: uppercase
+
+.li-underline
+    &:after
+        border: 2px solid #248CEC
+        bottom: -52px
+        content: ''
+        display: block
+        left: 50%
+        position: absolute
+        transform: translateX(-50%)
+        width: 2.6em
+
+@media (max-width: 1279px) // to 1024
+    .pages_header
+        width: 100%
+
+@media (max-width: 1023px) // to 768
+    .pages_header
+        &--wrp_logo_desktop
+            height: 5rem
+        &--desktop_menu
+            display: none
+        &--humburger
+            display: flex

@@ -1,0 +1,93 @@
+@import _variables
+
+.overlay
+    background-color: rgba(179, 179, 179, .5)
+    bottom: 0
+    display: none
+    height: 100%
+    left: 0px
+    position: fixed
+    right: 0
+    top: 0px
+    width: 100%
+    z-index: $overlay-index
+
+.modal_form
+    background-color: $modal-color-bg
+    box-shadow: 0 0.25em 6.25em rgba(0, 0, 0, .1)
+    font: 1rem Montserrat-Bold
+    height: 38.625em
+    left: 50%
+    padding: 5em 3.4375em 3.4375em
+    opacity: 0
+    position: fixed
+    top: 50%
+    transform: translate(-50%, -50%)
+    transition: .5s
+    visibility: hidden
+    width: 38.375em
+    z-index: $modal-index
+    &--header
+        color: $modal-header-text-color
+        font-size: 1.5em
+        text-transform: uppercase
+        margin-bottom: 2.625em
+        width: 100%
+    &--close-btn
+        cursor: pointer
+        position: absolute
+        right: 3.4375em
+        top: 2.6875em
+        transform: translate(50%, -50%)
+    &--inputs
+        background-color: $modal-inputs-bg
+        border: none
+        color: darken($modal-inputs-placeholder-text-color, 50%)
+        font: bold 0.875em Montserrat-Bold
+        height: 4.2857em
+        margin-bottom: 1.9285em
+        padding-left: 2.4286em
+        width: 100%
+        &::placeholder
+            color: $modal-inputs-placeholder-text-color
+    &--btn
+        @include primary_btn
+        color: white
+        margin-top: 2.1em
+
+.thank_window
+    background-color: $hover-btn
+    color: white
+    display: none
+    font: bold 2rem Montserrat-Bold
+    left: 50%
+    padding: 2rem
+    position: fixed
+    text-align: center
+    top: 50%
+    transform: translate(-50%, -50%)
+    z-index: 999
+
+.have-blur
+    filter: blur(2px)
+
+.show-block
+    display: block
+    opacity: 1
+    visibility: visible
+
+@media (max-width: 767px) // to 575px
+    .modal_form
+        font-size: .9rem
+
+@media (max-width: 574px) // to 414px
+    .modal_form
+        font-size: .6rem
+
+@media (max-width: 413px) // to 375
+    .modal_form
+        font-size: .55rem
+
+@media (max-width: 359px) // to 320
+    .modal_form
+        font-size: .5rem
