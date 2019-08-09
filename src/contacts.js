@@ -7,6 +7,7 @@ import './css/humburger.css';
 import './sass/pages_header.sass';
 import './sass/contacts.sass';
 import './sass/footer.sass';
+import { send } from 'q';
 
 
 (function(){
@@ -15,6 +16,7 @@ import './sass/footer.sass';
         setImg();
         setBg();
         openMobileMenuOnPages();
+        formHandler(document.querySelector('#modalForm'));
     }
 
     function setImg() {
@@ -79,6 +81,14 @@ import './sass/footer.sass';
     
             menuHeight = Number(menuHeight.substring(0, menuHeight.length - 2));
             section.style.height = `${clientHeight - menuHeight}px`;
+        }
+    }
+
+    function formHandler(form) {
+        const sendBtn = form.querySelector('input[type="button"]');
+
+        sendBtn.onclick = () => {
+            
         }
     }
 }());
