@@ -5,7 +5,7 @@ import './sass/default.sass';
 // styles of page
 import './css/humburger.css';
 import './sass/pages_header.sass';
-import './sass/tours.sass';
+
 import './sass/footer.sass';
 
 
