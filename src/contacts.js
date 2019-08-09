@@ -11,6 +11,7 @@ import './sass/footer.sass';
 
 (function(){
     window.onload = () => {
+        heightSectionToEndScreen(document.querySelector('.contacts'), document.querySelector('.pages_header'));
         setImg();
         setBg();
         openMobileMenuOnPages();
@@ -67,6 +68,17 @@ import './sass/footer.sass';
                 mobileMenu.classList.remove('active_mobile_menu');
                 ham.classList.remove('active');
             }
+        }
+    }
+
+    function heightSectionToEndScreen(section, menu) {
+        if (section !== null && menu !== null) {
+            let clientHeight = document.documentElement.clientHeight;
+            let menuHeight = window.getComputedStyle(menu).height;
+            
+    
+            menuHeight = Number(menuHeight.substring(0, menuHeight.length - 2));
+            section.style.height = `${clientHeight - menuHeight}px`;
         }
     }
 }());
