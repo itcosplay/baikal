@@ -7,8 +7,6 @@ import './css/humburger.css';
 import './sass/pages_header.sass';
 import './sass/contacts.sass';
 import './sass/footer.sass';
-import { send } from 'q';
-
 
 (function(){
     window.onload = () => {
@@ -85,10 +83,18 @@ import { send } from 'q';
     }
 
     function formHandler(form) {
-        const sendBtn = form.querySelector('input[type="button"]');
+        const sendBtn    = form.querySelector('input[type="button"]');
+        const name       = form.name;
+        const nameRegExp = /^[а-яёa-z]+$/iu;
 
         sendBtn.onclick = () => {
-            
+            if (!(nameRegExp.test(name.value))) {
+                alert('Пожалуйста, введите Ваше имя одним словом');
+                
+                return;
+            }
+
+            console.log('data from form was sended');
         }
     }
 }());
