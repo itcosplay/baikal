@@ -7,7 +7,7 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: [
-        './src/expeditions.js'
+        './src/contacts.js'
     ],
 
     output: {
@@ -74,12 +74,12 @@ module.exports = {
 
     plugins: [
         new MiniCssExtractPlugin({
-            filename: './style.expedition.css'
+            filename: './style.contacts.css'
         }),
         new HtmlWebpackPlugin({
             hash: false,
-            template: './src/expedition.html',
-            filename: './expedition.html'
+            template: './src/contacts.html',
+            filename: './contacts.html'
         }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
